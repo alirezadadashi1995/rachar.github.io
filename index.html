@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات تعمیرات الکترونیکی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>خدمات تعمیرات الکترونیکی</h1>
+        <p>تعمیر تخصصی موبایل، لپ‌تاپ، کامپیوتر و تلویزیون در محل شما</p>
+    </header>
+
+    <section id="services">
+        <h2>خدمات ما</h2>
+        <ul>
+            <li>تعمیر موبایل</li>
+            <li>تعمیر لپ‌تاپ</li>
+            <li>تعمیر کامپیوتر</li>
+            <li>تعمیر تلویزیون</li>
+            <li>تعمیر تلفن رومیزی</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>درخواست تعمیر</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">نام و نام خانوادگی:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">شماره تماس:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="device">نوع دستگاه:</label>
+            <select id="device" name="device" required>
+                <option value="موبایل">موبایل</option>
+                <option value="لپ‌تاپ">لپ‌تاپ</option>
+                <option value="کامپیوتر">کامپیوتر</option>
+                <option value="تلویزیون">تلویزیون</option>
+                <option value="تلفن رومیزی">تلفن رومیزی</option>
+            </select>
+
+            <label for="message">توضیحات مشکل:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">ارسال درخواست</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>تماس با ما: <a href="tel:+989123456789">۰۹۱۲۳۴۵۶۷۸۹</a></p>
+        <p>آدرس: تهران، خیابان نمونه، پلاک ۱۲۳</p>
+    </footer>
+</body>
+</html>
