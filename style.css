@@ -24,6 +24,12 @@ header p {
     font-size: 1.2em;
 }
 
+.logo {
+    width: 150px; /* اندازه‌ی لوگو */
+    height: auto;
+    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
+}
+
 section {
     padding: 20px;
     margin: 20px auto;
