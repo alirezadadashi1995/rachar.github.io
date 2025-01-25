@@ -93,3 +93,12 @@ footer p {
     margin: 5px 0;
     font-size: 1em;
 }
+
+footer a {
+    color: #fff; /* سفید */
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #FFD700; /* زرد */
+}
