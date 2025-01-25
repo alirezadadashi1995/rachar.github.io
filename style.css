@@ -18,6 +18,9 @@ header {
     width: 100px; /* اندازه‌ی لوگو */
     height: auto;
     margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header h1 {
@@ -52,6 +55,7 @@ ul {
 
 ul li {
     margin: 10px 0;
+    font-size: 1.1em;
 }
 
 a {
@@ -79,7 +83,7 @@ a:hover {
 }
 
 footer {
-    background: #000; /* مشکی */
+    background: #4CAF50; /* سبز */
     color: #fff;
     padding: 20px;
     margin-top: 20px;
@@ -87,4 +91,5 @@ footer {
 
 footer p {
     margin: 5px 0;
+    font-size: 1em;
 }
