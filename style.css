@@ -11,16 +11,22 @@ body {
 header {
     background: #FFA500; /* نارنجی */
     color: #000; /* مشکی */
-    padding: 40px 20px;
+    padding: 20px;
+}
+
+.logo {
+    width: 100px; /* اندازه‌ی لوگو */
+    height: auto;
+    margin-bottom: 10px;
 }
 
 header h1 {
-    margin: 0;
+    margin: 10px 0;
     font-size: 2.5em;
 }
 
 header p {
-    margin: 10px 0 0;
+    margin: 5px 0 0;
     font-size: 1.2em;
 }
 
