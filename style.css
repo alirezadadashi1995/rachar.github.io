@@ -1,5 +1,5 @@
 body {
-    font-family: 'IRANSans', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -17,8 +17,6 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    font-family: 'IRANYekan', Tahoma, Geneva, Verdana, sans-serif; /* استفاده از ایران‌یکان برای تایتل */
-    font-weight: 700; /* Bold کردن تایتل */
 }
 
 header p {
@@ -45,8 +43,6 @@ h2 {
     color: #FFA500; /* نارنجی */
     border-bottom: 2px solid #FFA500;
     padding-bottom: 10px;
-    font-family: 'IRANYekan', Tahoma, Geneva, Verdana, sans-serif; /* استفاده از ایران‌یکان برای تایتل‌ها */
-    font-weight: 700; /* Bold کردن تایتل‌ها */
 }
 
 ul {
