@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تعمیرات تخصصی موبایل، لپ‌تاپ، کامپیوتر و تلویزیون در تهران با ۱۰ سال سابقه کاری. خدمات سیار با تضمین کیفیت توسط علیرضا داداشی، مؤسس مجموعه راچار.">
-    <meta name="keywords" content="تعمیرات موبایل, تعمیر لپ‌تاپ, تعمیر کامپیوتر, تعمیر تلویزیون, تعمیرات سیار تهران, علیرضا داداشی, Alireza Dadashi, راچار, rachar.ir">
-    <meta name="author" content="Alireza Dadashi">
-    <title>تعمیرات تخصصی موبایل و لپ‌تاپ در تهران | راچار | Alireza Dadashi</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="لوگوی راچار" class="logo">
-        <h1>به مرکز تعمیرات راچار خوش آمدید 🛠️</h1>
-        <p>با ۱۰ سال سابقه کار سیار در سرتاسر تهران، آماده‌ی ارائه‌ی خدمات تعمیرات تخصصی به شما هستیم 🌟</p>
-        
-        <!-- منوی اصلی -->
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#services">خدمات ما</a></li>
-                <li><a href="#contact">ثبت درخواست</a></li>
-                <li><a href="#location">موقعیت ما</a></li>
-                <li><a href="#phone-numbers">تماس با ما</a></li>
-            </ul>
-        </nav>
-
-        <!-- آیکون منوی ساندویچی -->
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    </header>
-
-    <!-- سایر بخش‌های صفحه -->
-    <section id="services">
-        <h2>خدمات ما 🔧</h2>
-        <p>ما در مرکز تعمیرات راچار، خدمات تعمیرات انواع دستگاه‌های الکترونیکی از جمله موبایل، لپ‌تاپ، کامپیوتر و تلویزیون رو به شما ارائه می‌دیم. با بیش از ۱۰ سال سابقه درخشان در سرتاسر تهران، تضمین می‌کنیم که دستگاه‌هاتون رو با بهترین کیفیت و در سریع‌ترین زمان ممکن تعمیر کنیم. خدمات ما به صورت سیار هست و می‌تونیم در محل شما حاضر بشیم 💼</p>
-    </section>
-
-    <section id="contact">
-        <h2>ثبت درخواست تعمیر 📝</h2>
-        <p>برای ثبت درخواست تعمیر، روی دکمه‌ی زیر کلیک کن و فرم رو پر کن. ما در اولین فرصت با شما تماس می‌گیریم 📲</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSexNEpgS1kIKFdBPzJ7JwsB3DFKK1LenkimOpLtw2DiQr3b2g/viewform?usp=header" class="button" target="_blank">ثبت درخواست تعمیر 📩</a>
-    </section>
-
-    <section id="location">
-        <h2>موقعیت ما 📍</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3237.170863380889!2d51.308208!3d35.771179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDQ2JzE2LjInTiA1McKwMTgnMjkuNiJF!5e0!3m2!1sen!2s!4v1737770469292!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <section id="phone-numbers">
-        <h2>شماره‌های تماس 📞</h2>
-        <ul>
-            <li>واحد پشتیبانی: <a href="tel:09127780313">۰۹۱۲۷۷۸۰۳۱۳</a> 👨‍💻</li>
-            <li>واحد فنی و تعمیرات: <a href="tel:09123213854">۰۹۱۲۳۲۱۳۸۵۴</a> 🔧</li>
-            <li>واحد حمل و نقل: <a href="tel:09033213121">۰۹۰۳۳۲۱۳۱۲۱</a> 🚚</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>📍 تهران، جنت‌آباد</p>
-        <p>مدیریت: علیرضا داداشی</p>
-        <p>© تمام حقوق این سایت متعلق به گروه تعمیراتی راچار می‌باشد.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector('.main-nav');
-            nav.classList.toggle('active');
-        }
-
-        // انیمیشن اسکرول برای بخش‌ها
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll("section");
-            const iframe = document.querySelector("iframe");
-            const footer = document.querySelector("footer");
-
-            const checkVisibility = () => {
-                sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const sectionBottom = section.getBoundingClientRect().bottom;
-
-                    if (sectionTop < window.innerHeight && sectionBottom > 0) {
-                        section.classList.add("visible");
-                    }
-                });
-
-                const iframeTop = iframe.getBoundingClientRect().top;
-                const iframeBottom = iframe.getBoundingClientRect().bottom;
-
-                if (iframeTop < window.innerHeight && iframeBottom > 0) {
-                    iframe.classList.add("visible");
-                }
-
-                const footerTop = footer.getBoundingClientRect().top;
-
-                if (footerTop < window.innerHeight) {
-                    footer.classList.add("visible");
-                }
-            };
-
-            window.addEventListener("scroll", checkVisibility);
-            checkVisibility(); // بررسی اولیه
-        });
-    </script>
-</body>
-</html>
