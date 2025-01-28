@@ -61,15 +61,15 @@ header p {
 }
 
 .main-nav ul li a {
-    color: #fff; /* سفید */
+    color: #000; /* تغییر رنگ متن به مشکی */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #FFD700; /* زرد */
-    font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
+    color: #FFA500; /* تغییر رنگ متن به نارنجی هنگام هاور */
+    font-size: 1.2em;
     text-decoration: underline;
 }
 
@@ -209,18 +209,26 @@ iframe.visible {
 
     .main-nav ul li a:hover {
         color: #FFA500; /* نارنجی */
-        font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
+        font-size: 1.2em;
+    }
+
+    /* در حالت موبایل انیمیشن typewriter را غیرفعال می‌کنیم */
+    h1, h2 {
+        animation: none;
+        white-space: normal; /* اجازه می‌دهیم متن به صورت عادی نمایش داده شود */
     }
 }
 
-/* انیمیشن typewriter برای عنوان‌ها */
+/* انیمیشن typewriter برای عنوان‌ها در حالت دسکتاپ */
+@media (min-width: 769px) {
+    h1, h2 {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typewriter 2s steps(40) 1s 1 normal both;
+    }
+}
+
 @keyframes typewriter {
     from { width: 0; }
     to { width: 100%; }
-}
-
-h1, h2 {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 2s steps(40) 1s 1 normal both;
 }
