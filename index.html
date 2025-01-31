@@ -44,6 +44,9 @@
 
         <!-- آیکون منوی ساندویچی -->
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+        <!-- Overlay برای بستن منو -->
+        <div class="overlay" onclick="toggleMenu()"></div>
     </header>
 
     <!-- سایر بخش‌های صفحه -->
@@ -86,6 +89,13 @@
             const overlay = document.querySelector('.overlay');
             overlay.classList.toggle('active');
         }
+
+        // بستن منو پس از کلیک روی یک لینک
+        document.querySelectorAll('.main-nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
 
         // انیمیشن اسکرول برای بخش‌ها
         document.addEventListener("DOMContentLoaded", function() {
