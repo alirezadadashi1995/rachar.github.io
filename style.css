@@ -134,6 +134,23 @@ a:hover {
     background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
 }
 
+.phone-button {
+    display: inline-block;
+    background: #FFD700; /* زرد */
+    color: #000; /* مشکی */
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.phone-button:hover {
+    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
+    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+}
+
 footer {
     background: #4CAF50; /* سبز */
     color: #fff;
@@ -150,6 +167,17 @@ footer.visible {
 footer p {
     margin: 5px 0;
     font-size: 1em;
+}
+
+.social-icon {
+    width: 110px; /* اندازه آیکون */
+    height: auto;
+    margin: 0 10px; /* فاصله بین آیکون‌ها */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
 }
 
 iframe {
