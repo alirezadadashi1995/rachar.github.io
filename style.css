@@ -170,7 +170,7 @@ footer p {
 }
 
 .social-icon {
-    width: 110px; /* اندازه آیکون */
+    width: 85px; /* اندازه آیکون */
     height: auto;
     margin: 0 10px; /* فاصله بین آیکون‌ها */
     transition: transform 0.3s ease;
