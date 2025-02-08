@@ -261,14 +261,14 @@ iframe.visible {
 /* استایل اسلایدر */
 .slider {
     position: relative;
-    max-width: 800px;
-    height: 300px;
+    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
+    height: auto;
+    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 .slide {
     position: absolute;
     width: 100%;
