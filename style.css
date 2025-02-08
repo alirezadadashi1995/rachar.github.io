@@ -257,3 +257,61 @@ iframe.visible {
         display: block;
     }
 }
+
+/* استایل اسلایدر */
+.slider {
+    position: relative;
+    max-width: 800px;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* دکمه‌های کنترل اسلایدر */
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
+    left: 0;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
