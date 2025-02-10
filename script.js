@@ -50,7 +50,7 @@ function checkRepairStatus() {
         return;
     }
 
-    fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbweltzUBQ87stkZfzepp1hozJB8gHncdOotlkRf9KN6PZWAXIuOFYr3-tKsgNeMpgs_/exec/exec?trackingCode=" + trackingCode)
+    fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbweltzUBQ87stkZfzepp1hozJB8gHncdOotlkRf9KN6PZWAXIuOFYr3-tKsgNeMpgs_/exec?trackingCode=" + trackingCode)
         .then(response => response.json())
         .then(data => {
             if (data.status) {
