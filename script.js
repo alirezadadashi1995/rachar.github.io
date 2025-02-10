@@ -51,7 +51,7 @@ function checkRepairStatus() {
         return;
     }
 
-    fetch("https://script.google.com/macros/s/AKfycbweltzUBQ87stkZfzepp1hozJB8gHncdOotlkRf9KN6PZWAXIuOFYr3-tKsgNeMpgs_/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzefF2brT4jOvonLpr2vqb9dvOM18KU3b7lWd8cK3fDXmMtcN_swzF6WspzUimiDUlY/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: "trackingCode=" + encodeURIComponent(trackingCode)
