@@ -44,20 +44,28 @@ document.querySelector(".slider").addEventListener("touchend", (e) => {
 });
 
 function checkRepairStatus() {
-    var trackingCode = document.getElementById("trackingCode").value;
+    var trackingCode = document.getElementById("trackingCode").value.trim();
+
     if (!trackingCode) {
         alert("لطفاً کد رهگیری خود را وارد کنید.");
         return;
     }
 
-    fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbweltzUBQ87stkZfzepp1hozJB8gHncdOotlkRf9KN6PZWAXIuOFYr3-tKsgNeMpgs_/exec?trackingCode=" + trackingCode)
-        .then(response => response.json())
-        .then(data => {
-            if (data.status) {
-                document.getElementById("repairStatus").innerHTML = "وضعیت تعمیر: " + data.status;
-            } else {
-                document.getElementById("repairStatus").innerHTML = "کد رهگیری نامعتبر است.";
-            }
-        })
-        .catch(error => console.error("خطا در دریافت اطلاعات:", error));
+    fetch("https://script.google.com/macros/s/AKfycbweltzUBQ87stkZfzepp1hozJB8gHncdOotlkRf9KN6PZWAXIuOFYr3-tKsgNeMpgs_/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "trackingCode=" + encodeURIComponent(trackingCode)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status) {
+            document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
+        } else {
+            document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
+        }
+    })
+    .catch(error => {
+        console.error("⚠️ خطا در دریافت اطلاعات:", error);
+        document.getElementById("repairStatus").innerHTML = "❗ خطا در ارتباط با سرور. لطفاً بعداً امتحان کنید.";
+    });
 }
