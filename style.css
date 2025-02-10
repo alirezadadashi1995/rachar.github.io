@@ -315,3 +315,47 @@ iframe.visible {
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+#tracking {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#tracking input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#tracking button {
+    display: inline-block;
+    background: #FFA500; /* نارنجی */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#tracking button:hover {
+    background: #FF8C00; /* رنگ کمی تیره‌تر هنگام هاور */
+    transform: scale(1.05);
+}
+
+#repairStatus {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
