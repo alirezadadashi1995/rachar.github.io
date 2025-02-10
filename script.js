@@ -62,22 +62,16 @@ function checkRepairStatus() {
             document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
             document.getElementById("repairDescription").innerHTML = data.description;
             
-            if (data.cost && data.cost !== "مشخص نشده تومان") {
+            // نمایش هزینه فقط در مراحل 2، 3 و 4
+            if (data.status === "در حال تعمیر" || data.status === "تعمیر شده" || data.status === "تحویل مشتری") {
                 document.getElementById("repairCost").innerHTML = data.cost;
             } else {
-                document.getElementById("repairCost").innerHTML = "💰 هزینه هنوز مشخص نشده است.";
-            }
-
-            if (data.emailSent) {
-                document.getElementById("emailNotification").innerHTML = "📧 ایمیل حاوی اطلاعات پرداخت برای شما ارسال شد.";
-            } else {
-                document.getElementById("emailNotification").innerHTML = "";
+                document.getElementById("repairCost").innerHTML = "";
             }
         } else {
             document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
             document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
             document.getElementById("repairCost").innerHTML = "";
-            document.getElementById("emailNotification").innerHTML = "";
         }
     })
     .catch(error => {
@@ -85,6 +79,5 @@ function checkRepairStatus() {
         document.getElementById("repairStatus").innerHTML = "❗ خطا در ارتباط با سرور. لطفاً بعداً امتحان کنید.";
         document.getElementById("repairDescription").innerHTML = "";
         document.getElementById("repairCost").innerHTML = "";
-        document.getElementById("emailNotification").innerHTML = "";
     });
 }
