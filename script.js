@@ -60,11 +60,32 @@ function checkRepairStatus() {
     .then(data => {
         if (data.status) {
             document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
-            document.getElementById("repairDescription").innerHTML = data.description;
-            
-            // نمایش هزینه فقط در مراحل 2، 3 و 4
-            if (data.status === "در حال تعمیر" || data.status === "تعمیر شده" || data.status === "تحویل مشتری") {
-                document.getElementById("repairCost").innerHTML = data.cost;
+
+            // بررسی و نمایش توضیحات مناسب بر اساس وضعیت
+            let description = "";
+            switch (data.status) {
+                case "دریافت دستگاه":
+                    description = "دستگاه هنوز از شما تحویل گرفته نشده است.";
+                    break;
+                case "در حال تعمیر":
+                    description = "دستگاه به دست کارشناس فنی ما در راچار رسیده و در حال تعمیر می‌باشد.";
+                    break;
+                case "تعمیر شده":
+                    description = "دستگاه شما تعمیر شده و در اولین فرصت خدمت شما تحویل داده می‌شود.";
+                    break;
+                case "تحویل مشتری":
+                    description = "دستگاه شما تعمیر و به شما تحویل داده شده است.";
+                    break;
+                default:
+                    description = "وضعیت نامشخص. لطفاً با پشتیبانی تماس بگیرید.";
+            }
+            document.getElementById("repairDescription").innerHTML = description;
+
+            // نمایش هزینه در مراحل خاص
+            if (data.status === "در حال تعمیر" && data.cost) {
+                document.getElementById("repairCost").innerHTML = "💰 هزینه تقریبی تعمیر: " + data.cost + " تومان";
+            } else if ((data.status === "تعمیر شده" || data.status === "تحویل مشتری") && data.cost) {
+                document.getElementById("repairCost").innerHTML = "💰 مبلغ نهایی تعمیر: " + data.cost + " تومان";
             } else {
                 document.getElementById("repairCost").innerHTML = "";
             }
