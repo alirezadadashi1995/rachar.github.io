@@ -62,10 +62,10 @@ function checkRepairStatus() {
             document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
             document.getElementById("repairDescription").innerHTML = data.description;
             
-            if (data.cost) {
+            if (data.cost && data.cost !== "مشخص نشده تومان") {
                 document.getElementById("repairCost").innerHTML = data.cost;
             } else {
-                document.getElementById("repairCost").innerHTML = "";
+                document.getElementById("repairCost").innerHTML = "💰 هزینه هنوز مشخص نشده است.";
             }
 
             if (data.emailSent) {
