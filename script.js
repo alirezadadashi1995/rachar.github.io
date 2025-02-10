@@ -51,10 +51,10 @@ function checkRepairStatus() {
         return;
     }
 
-    fetch("https://script.google.com/macros/s/AKfycbzefF2brT4jOvonLpr2vqb9dvOM18KU3b7lWd8cK3fDXmMtcN_swzF6WspzUimiDUlY/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxuBy9Lf3-uZTGGEziZuEdWm0-8LLOgVEmFlNOKM60Cy40MXH6qSql5yh7Wb5yU3Mxs/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "trackingCode=" + encodeURIComponent(trackingCode)
+        body: new URLSearchParams({ trackingCode: trackingCode })
     })
     .then(response => response.json())
     .then(data => {
