@@ -43,3 +43,21 @@ document.querySelector(".slider").addEventListener("touchend", (e) => {
     }
 });
 
+function checkRepairStatus() {
+    var trackingCode = document.getElementById("trackingCode").value;
+    if (!trackingCode) {
+        alert("لطفاً کد رهگیری خود را وارد کنید.");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEB_APP_URL/exec?trackingCode=" + trackingCode)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status) {
+                document.getElementById("repairStatus").innerHTML = "وضعیت تعمیر: " + data.status;
+            } else {
+                document.getElementById("repairStatus").innerHTML = "کد رهگیری نامعتبر است.";
+            }
+        })
+        .catch(error => console.error("خطا در دریافت اطلاعات:", error));
+}
