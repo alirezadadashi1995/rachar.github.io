@@ -83,7 +83,11 @@ function checkRepairStatus() {
 
             // نمایش هزینه در تمام مراحل در صورتی که مقدار آن مشخص باشد
             if (data.cost && data.cost !== "مشخص نشده") {
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + data.cost + " تومان";
+                let costText = data.cost.toString().trim();
+                if (!costText.includes("تومان")) {
+                    costText += " تومان";
+                }
+                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + costText;
             } else {
                 document.getElementById("repairCost").innerHTML = "💰 هزینه مشخص نشده";
             }
