@@ -81,19 +81,13 @@ function checkRepairStatus() {
             }
             document.getElementById("repairDescription").innerHTML = description;
 
-            // نمایش هزینه در مراحل خاص
-            if (data.status === "در حال تعمیر" && data.cost) {
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تقریبی تعمیر: " + data.cost + " تومان";
-            } else if ((data.status === "تعمیر شده" || data.status === "تحویل مشتری") && data.cost) {
-                document.getElementById("repairCost").innerHTML = "💰 مبلغ نهایی تعمیر: " + data.cost + " تومان";
+            // نمایش هزینه در تمام مراحل در صورتی که مقدار آن مشخص باشد
+            if (data.cost && data.cost !== "مشخص نشده") {
+            document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + data.cost + " تومان";
             } else {
-                document.getElementById("repairCost").innerHTML = "";
+            document.getElementById("repairCost").innerHTML = "💰 هزینه مشخص نشده";
             }
-        } else {
-            document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
-            document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
-            document.getElementById("repairCost").innerHTML = "";
-        }
+
     })
     .catch(error => {
         console.error("⚠️ خطا در دریافت اطلاعات:", error);
