@@ -61,36 +61,37 @@ function checkRepairStatus() {
         if (data.status) {
             document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
 
-            // بررسی و نمایش توضیحات مناسب بر اساس وضعیت
             let description = "";
+            let costText = ""; // برای نمایش هزینه
+
             switch (data.status) {
                 case "دریافت دستگاه":
                     description = "دستگاه هنوز از شما تحویل گرفته نشده است.";
                     break;
                 case "در حال تعمیر":
                     description = "دستگاه به دست کارشناس فنی ما در راچار رسیده و در حال تعمیر می‌باشد.";
+                    if (data.cost && data.cost !== "مشخص نشده") {
+                        costText = "💰 حدود هزینه تعمیر: " + data.cost + " تومان";
+                    }
                     break;
                 case "تعمیر شده":
                     description = "دستگاه شما تعمیر شده و در اولین فرصت خدمت شما تحویل داده می‌شود.";
+                    if (data.cost && data.cost !== "مشخص نشده") {
+                        costText = "💰 هزینه تعمیر: " + data.cost + " تومان";
+                    }
                     break;
                 case "تحویل مشتری":
                     description = "دستگاه شما تعمیر و به شما تحویل داده شده است.";
+                    if (data.cost && data.cost !== "مشخص نشده") {
+                        costText = "💰 هزینه تعمیر: " + data.cost + " تومان";
+                    }
                     break;
                 default:
                     description = "وضعیت نامشخص. لطفاً با پشتیبانی تماس بگیرید.";
             }
-            document.getElementById("repairDescription").innerHTML = description;
 
-            // نمایش هزینه در تمام مراحل در صورتی که مقدار آن مشخص باشد
-            if (data.cost && data.cost !== "مشخص نشده") {
-                let costText = data.cost.toString().trim();
-                if (!costText.includes("تومان")) {
-                    costText += " تومان";
-                }
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + costText;
-            } else {
-                document.getElementById("repairCost").innerHTML = "💰 هزینه مشخص نشده";
-            }
+            document.getElementById("repairDescription").innerHTML = description;
+            document.getElementById("repairCost").innerHTML = costText;
         } else {
             document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
             document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
