@@ -83,11 +83,15 @@ function checkRepairStatus() {
 
             // نمایش هزینه در تمام مراحل در صورتی که مقدار آن مشخص باشد
             if (data.cost && data.cost !== "مشخص نشده") {
-            document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + data.cost + " تومان";
+                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + data.cost + " تومان";
             } else {
-            document.getElementById("repairCost").innerHTML = "💰 هزینه مشخص نشده";
+                document.getElementById("repairCost").innerHTML = "💰 هزینه مشخص نشده";
             }
-
+        } else {
+            document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
+            document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
+            document.getElementById("repairCost").innerHTML = "";
+        }
     })
     .catch(error => {
         console.error("⚠️ خطا در دریافت اطلاعات:", error);
