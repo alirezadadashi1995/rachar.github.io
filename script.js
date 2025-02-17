@@ -62,6 +62,7 @@ function checkRepairStatus() {
     document.getElementById("repairDescription").innerHTML = "";
     document.getElementById("repairCost").innerHTML = "";
 
+    // URL اسکریپت Google Apps Script شما (در اینجا باید آن را جایگزین کنید)
     var url = "https://script.google.com/macros/s/AKfycbyzm8ROXOp7tKMnDWEAkvEbSsELmQUyhZneuB_UcdjNei4qHhhl9kQ0ZQc29N5v9VZf/exec?trackingCode=" + trackingCode;
 
     fetch(url)
@@ -76,9 +77,10 @@ function checkRepairStatus() {
             if (data.error) {
                 document.getElementById("repairStatus").innerHTML = "❌ " + data.error;
             } else {
-                document.getElementById("repairStatus").innerHTML = "📌 وضعیت تعمیر: " + data.status;
-                document.getElementById("repairDescription").innerHTML = "📄 توضیحات: " + data.description;
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + data.cost + " تومان";
+                // بررسی داده‌ها و نمایش وضعیت، توضیحات و هزینه
+                document.getElementById("repairStatus").innerHTML = "📌 وضعیت تعمیر: " + decodeURIComponent(data.status);
+                document.getElementById("repairDescription").innerHTML = "📄 توضیحات: " + decodeURIComponent(data.description);
+                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + decodeURIComponent(data.cost) + " تومان";
             }
         })
         .catch(error => {
@@ -86,4 +88,3 @@ function checkRepairStatus() {
             console.error("Error:", error);
         });
 }
-
