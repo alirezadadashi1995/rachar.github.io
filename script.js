@@ -43,12 +43,6 @@ document.querySelector(".slider").addEventListener("touchend", (e) => {
     }
 });
 
-document.getElementById("trackingCode").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        checkRepairStatus(); // جستجو به محض فشردن اینتر
-    }
-});
-
 function checkRepairStatus() {
     var trackingCode = document.getElementById("trackingCode").value.trim();
 
@@ -57,12 +51,7 @@ function checkRepairStatus() {
         return;
     }
 
-    // نمایش حالت جستجو
-    document.getElementById("repairStatus").innerHTML = "🔄 در حال جستجو...";
-    document.getElementById("repairDescription").innerHTML = "";
-    document.getElementById("repairCost").innerHTML = "";
-
-    fetch("https://script.google.com/macros/s/AKfycbzh8w7364PUTMlEkNuG7expSw43CdB7Rcl722ccpveRNwXMtOqkBTSc5zt9PrkaDKg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwhMPsYV4r7nJ9P50mVKeBZBJs8w2d19WshXn_IU0XidbEZgXMIi2824VZWemsRyN10/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ trackingCode: trackingCode })
@@ -75,17 +64,7 @@ function checkRepairStatus() {
             let description = "";
             let costText = ""; // برای نمایش هزینه
 
-            // نمایش نام و نام خانوادگی، کد رهگیری، نوع دستگاه و مورد
-            let name = data.name || "نام مشخص نشده";
-            let deviceType = data.deviceType || "نوع دستگاه مشخص نشده";
-            let issueDescription = data.issueDescription || "مشکل مشخص نشده";
-            document.getElementById("repairDescription").innerHTML = `
-                نام و نام خانوادگی: ${name}<br>
-                کد رهگیری: ${trackingCode}<br>
-                نوع دستگاه: ${deviceType}<br>
-                مورد: ${issueDescription}
-            `;
-
+            // اگر مقدار هزینه دارای عبارت اضافی باشد، فقط عدد را استخراج می‌کنیم
             let costValue = data.cost ? data.cost.replace(/[^0-9]/g, "") : "";
 
             switch (data.status) {
@@ -114,9 +93,8 @@ function checkRepairStatus() {
                     description = "وضعیت نامشخص. لطفاً با پشتیبانی تماس بگیرید.";
             }
 
-            document.getElementById("repairStatus").innerHTML = description;
+            document.getElementById("repairDescription").innerHTML = description;
             document.getElementById("repairCost").innerHTML = costText;
-
         } else {
             document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
             document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
