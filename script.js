@@ -62,7 +62,7 @@ function checkRepairStatus() {
     document.getElementById("repairDescription").innerHTML = "";
     document.getElementById("repairCost").innerHTML = "";
 
-    var url = "https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbwELvJmN8MXr-6yAYw6s3KuGaS-Tzns4gjsi5GZQdwVh7SOCx5vRhJc3RdANZRqU0v2/exec?trackingCode=" + trackingCode;
+    var url = "https://script.google.com/macros/s/AKfycbwELvJmN8MXr-6yAYw6s3KuGaS-Tzns4gjsi5GZQdwVh7SOCx5vRhJc3RdANZRqU0v2/exec?trackingCode=" + trackingCode;
 
     fetch(url)
         .then(response => response.json())
