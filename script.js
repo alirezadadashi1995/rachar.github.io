@@ -56,41 +56,65 @@ function checkRepairStatus() {
         alert("لطفاً کد رهگیری خود را وارد کنید.");
         return;
     }
-
-    // نمایش حالت جستجو
+ // نمایش حالت جستجو
     document.getElementById("repairStatus").innerHTML = "🔄 در حال جستجو...";
     document.getElementById("repairDescription").innerHTML = "";
     document.getElementById("repairCost").innerHTML = "";
 
-    var url = "https://script.google.com/macros/s/AKfycbwELvJmN8MXr-6yAYw6s3KuGaS-Tzns4gjsi5GZQdwVh7SOCx5vRhJc3RdANZRqU0v2/exec?trackingCode=" + trackingCode;
+    fetch("https://script.google.com/macros/s/AKfycbzGjFiVFQ4T66xvjX7JTb6zNkwGrO3I1h3MSLquVpxVSRhewfDkYr8YCC2uBMB2LHZR/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ trackingCode: trackingCode })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status) {
+            document.getElementById("repairStatus").innerHTML = "🔍 وضعیت تعمیر: " + data.status;
 
-    fetch(url)
-        .then(response => {
-            // بررسی نوع پاسخ و اطمینان از اینکه متن است
-            if (!response.ok) {
-                throw new Error('خطا در دریافت اطلاعات');
-            }
-            return response.text(); // دریافت داده‌ها به صورت متن ساده
-        })
-        .then(data => {
-            // پردازش پاسخ
-            if (data.includes("❌")) {
-                document.getElementById("repairStatus").innerHTML = data;
-            } else {
-                // استخراج اطلاعات از متن ساده
-                var lines = data.split("\n");
-                var status = lines[0].replace("status: ", "");
-                var description = lines[1].replace("description: ", "");
-                var cost = lines[2].replace("cost: ", "");
+            let description = "";
+            let costText = ""; // برای نمایش هزینه
 
-                // نمایش وضعیت، توضیحات و هزینه
-                document.getElementById("repairStatus").innerHTML = "📌 وضعیت تعمیر: " + status;
-                document.getElementById("repairDescription").innerHTML = "📄 توضیحات: " + description;
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + cost + " تومان";
+            // اگر مقدار هزینه دارای عبارت اضافی باشد، فقط عدد را استخراج می‌کنیم
+            let costValue = data.cost ? data.cost.replace(/[^0-9]/g, "") : "";
+
+            switch (data.status) {
+                case "دریافت دستگاه":
+                    description = "دستگاه هنوز از شما تحویل گرفته نشده است.";
+                    break;
+                case "در حال تعمیر":
+                    description = "دستگاه به دست کارشناس فنی ما در راچار رسیده و در حال تعمیر می‌باشد.";
+                    if (costValue) {
+                        costText = "💰 حدود هزینه تعمیر: " + costValue + " تومان";
+                    }
+                    break;
+                case "تعمیر شده":
+                    description = "دستگاه شما تعمیر شده و در اولین فرصت خدمت شما تحویل داده می‌شود.";
+                    if (costValue) {
+                        costText = "💰 هزینه تعمیر: " + costValue + " تومان";
+                    }
+                    break;
+                case "تحویل مشتری":
+                    description = "دستگاه شما تعمیر و به شما تحویل داده شده است.";
+                    if (costValue) {
+                        costText = "💰 هزینه تعمیر: " + costValue + " تومان";
+                    }
+                    break;
+                default:
+                    description = "وضعیت نامشخص. لطفاً با پشتیبانی تماس بگیرید.";
             }
-        })
-        .catch(error => {
-            document.getElementById("repairStatus").innerHTML = "❌ خطا در دریافت اطلاعات!";
-            console.error("Error:", error);
-        });
+
+            document.getElementById("repairDescription").innerHTML = description;
+            document.getElementById("repairCost").innerHTML = costText;
+        } else {
+            document.getElementById("repairStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
+            document.getElementById("repairDescription").innerHTML = "لطفاً مجدداً بررسی کنید.";
+            document.getElementById("repairCost").innerHTML = "";
+        }
+    })
+    .catch(error => {
+        console.error("⚠️ خطا در دریافت اطلاعات:", error);
+        document.getElementById("repairStatus").innerHTML = "❗ خطا در ارتباط با سرور. لطفاً بعداً امتحان کنید.";
+        document.getElementById("repairDescription").innerHTML = "";
+        document.getElementById("repairCost").innerHTML = "";
+    });
 }
