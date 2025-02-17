@@ -63,7 +63,7 @@ function checkRepairStatus() {
     document.getElementById("repairCost").innerHTML = "";
 
     // URL اسکریپت Google Apps Script شما (در اینجا باید آن را جایگزین کنید)
-    var url = "https://script.google.com/macros/s/AKfycbyzm8ROXOp7tKMnDWEAkvEbSsELmQUyhZneuB_UcdjNei4qHhhl9kQ0ZQc29N5v9VZf/exec?trackingCode=" + trackingCode;
+    var url = "https://script.google.com/macros/s/AKfycbxCGPbbb4YfPSKKuBcbrHTaMA77_56lJEuLP-CzGsgT1shd-vk14AzTvy1xiFKEaZWq/exec?trackingCode=" + trackingCode;
 
     fetch(url)
         .then(response => {
