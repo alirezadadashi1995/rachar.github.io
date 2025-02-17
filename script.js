@@ -62,7 +62,7 @@ function checkRepairStatus() {
     document.getElementById("repairDescription").innerHTML = "";
     document.getElementById("repairCost").innerHTML = "";
 
-    fetch("https://script.google.com/macros/s/AKfycbzh8w7364PUTMlEkNuG7expSw43CdB7Rcl722ccpveRNwXMtOqkBTSc5zt9PrkaDKg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbz3fgDGvH9_VWIRP4uPIH7yyrCuAZjc8UQZOLGJUUrdip8dHcOZbuh3IZk1CZq29IFR/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ trackingCode: trackingCode })
