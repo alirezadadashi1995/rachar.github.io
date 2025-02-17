@@ -62,25 +62,31 @@ function checkRepairStatus() {
     document.getElementById("repairDescription").innerHTML = "";
     document.getElementById("repairCost").innerHTML = "";
 
-    // URL اسکریپت Google Apps Script شما (در اینجا باید آن را جایگزین کنید)
-    var url = "https://script.google.com/macros/s/AKfycbxCGPbbb4YfPSKKuBcbrHTaMA77_56lJEuLP-CzGsgT1shd-vk14AzTvy1xiFKEaZWq/exec?trackingCode=" + trackingCode;
+    var url = "https://script.google.com/macros/s/AKfycbyzm8ROXOp7tKMnDWEAkvEbSsELmQUyhZneuB_UcdjNei4qHhhl9kQ0ZQc29N5v9VZf/exec?trackingCode=" + trackingCode;
 
     fetch(url)
         .then(response => {
-            // بررسی نوع پاسخ و اطمینان از این که JSON است
+            // بررسی نوع پاسخ و اطمینان از اینکه متن است
             if (!response.ok) {
                 throw new Error('خطا در دریافت اطلاعات');
             }
-            return response.json();
+            return response.text(); // دریافت داده‌ها به صورت متن ساده
         })
         .then(data => {
-            if (data.error) {
-                document.getElementById("repairStatus").innerHTML = "❌ " + data.error;
+            // پردازش پاسخ
+            if (data.includes("❌")) {
+                document.getElementById("repairStatus").innerHTML = data;
             } else {
-                // بررسی داده‌ها و نمایش وضعیت، توضیحات و هزینه
-                document.getElementById("repairStatus").innerHTML = "📌 وضعیت تعمیر: " + decodeURIComponent(data.status);
-                document.getElementById("repairDescription").innerHTML = "📄 توضیحات: " + decodeURIComponent(data.description);
-                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + decodeURIComponent(data.cost) + " تومان";
+                // استخراج اطلاعات از متن ساده
+                var lines = data.split("\n");
+                var status = lines[0].replace("status: ", "");
+                var description = lines[1].replace("description: ", "");
+                var cost = lines[2].replace("cost: ", "");
+
+                // نمایش وضعیت، توضیحات و هزینه
+                document.getElementById("repairStatus").innerHTML = "📌 وضعیت تعمیر: " + status;
+                document.getElementById("repairDescription").innerHTML = "📄 توضیحات: " + description;
+                document.getElementById("repairCost").innerHTML = "💰 هزینه تعمیر: " + cost + " تومان";
             }
         })
         .catch(error => {
