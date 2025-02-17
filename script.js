@@ -65,7 +65,13 @@ function checkRepairStatus() {
     var url = "https://script.google.com/macros/s/AKfycbyzm8ROXOp7tKMnDWEAkvEbSsELmQUyhZneuB_UcdjNei4qHhhl9kQ0ZQc29N5v9VZf/exec?trackingCode=" + trackingCode;
 
     fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            // بررسی نوع پاسخ و اطمینان از این که JSON است
+            if (!response.ok) {
+                throw new Error('خطا در دریافت اطلاعات');
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.error) {
                 document.getElementById("repairStatus").innerHTML = "❌ " + data.error;
@@ -80,3 +86,4 @@ function checkRepairStatus() {
             console.error("Error:", error);
         });
 }
+
