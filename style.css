@@ -37,8 +37,15 @@ header p {
 }
 
 .main-nav {
-    margin-top: 20px;
+    margin-top: 0; /* حذف فاصله بالا */
+    background: #FFA500; /* نارنجی */
+    position: fixed; /* ثابت کردن موقعیت */
+    top: 0; /* قرار دادن در بالای صفحه */
+    left: 0; /* قرار دادن در سمت چپ صفحه */
+    width: 100%; /* عرض کامل صفحه */
+    z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
 }
+
 
 .main-nav ul {
     list-style-type: none;
