@@ -49,6 +49,25 @@ document.getElementById("trackingCode").addEventListener("keypress", function(e)
     }
 });
 
+// تابع کپی اطلاعات بانکی
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        // نمایش پیام موفقیت
+        const originalText = element.innerText;
+        element.innerText = "کپی شد!";
+        
+        // بازگشت به متن اصلی پس از 2 ثانیه
+        setTimeout(() => {
+            element.innerText = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('خطا در کپی کردن: ', err);
+    });
+}
+
 function checkRepairStatus() {
     var trackingCode = document.getElementById("trackingCode").value.trim();
 
