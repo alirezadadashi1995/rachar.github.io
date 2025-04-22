@@ -394,3 +394,62 @@ iframe.visible {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+
+/* استایل بخش اطلاعات بانکی */
+.bank-info {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.bank-info h3 {
+    color: #FFA500;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.bank-card {
+    background: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bank-card p {
+    margin: 0;
+    font-family: monospace;
+    direction: ltr;
+    text-align: left;
+}
+
+.bank-card strong {
+    color: #333;
+}
+
+.copy-button {
+    background: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+
+.copy-button:hover {
+    background: #FFA500;
+    transform: scale(1.05);
+}
+
+.bank-notice {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
