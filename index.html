@@ -95,10 +95,29 @@
 
     <section id="payment-receipt">
     <h2>ارسال رسید پرداخت</h2>
-    <p>در صورت پرداخت هزینه تعمیر، می‌توانید رسید پرداخت خود را از طریق واتساپ برای ما ارسال کنید:</p>
-    <a href="https://wa.me/989123213854?text=باسلام، رسید پرداخت من بابت تعمیر وسیله الکتریکی در مرکز تعمیرات راچار :" class="button whatsapp-button" target="_blank" rel="noopener noreferrer">
-        ارسال رسید از طریق واتساپ
+    
+    <div class="bank-info">
+        <h3>اطلاعات بانکی برای واریز:</h3>
+        <div class="bank-card">
+            <p><strong>شماره کارت:</strong> <span id="cardNumber">۶۰۳۷-۹۹۹۹-۹۹۹۹-۹۹۹۹</span></p>
+            <button onclick="copyToClipboard('cardNumber')" class="copy-button">کپی شماره کارت</button>
+        </div>
+        
+        <div class="bank-card">
+            <p><strong>شماره شبا:</strong> <span id="shabaNumber">IR550120000000000000000000</span></p>
+            <button onclick="copyToClipboard('shabaNumber')" class="copy-button">کپی شماره شبا</button>
+        </div>
+        
+        <p class="bank-notice">پس از واریز، لطفاً رسید پرداخت را از طریق واتساپ ارسال کنید:</p>
+    </div>
+    
+    <a href="https://wa.me/989123213854?text=باسلام، رسید پرداخت من بابت تعمیر وسیله الکتریکی در مرکز تعمیرات راچار:" 
+       class="button whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       ارسال رسید از طریق واتساپ
     </a>
+    
     <p>یا می‌توانید مستقیماً به شماره <strong>09123213854</strong> در واتساپ پیام دهید.</p>
     </section>
     
