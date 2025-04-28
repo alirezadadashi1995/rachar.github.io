@@ -69,6 +69,28 @@
     <button id="nextSlide">❯</button>
 </div>
 
+      <!-- بعد از اسلایدر و قبل از بخش خدمات -->
+<div class="main-actions">
+    <div class="action-buttons">
+        <a href="#services" class="action-button repair-button">
+            <span>🛠️ تعمیر فوری دستگاه</span>
+            <p>کلیک کنید برای ثبت درخواست تعمیر</p>
+        </a>
+        <a href="#digital-products" class="action-button buy-button">
+            <span>💻 خرید کالای دیجیتال</span>
+            <p>کلیک کنید برای مشاهده محصولات</p>
+        </a>
+    </div>
+    <div class="secondary-actions">
+        <a href="#payment-receipt" class="secondary-button payment-button">
+            پرداخت و ارسال رسید
+        </a>
+        <a href="#phone-numbers" class="secondary-button contact-button">
+            ارتباط با ما
+        </a>
+    </div>
+</div>
+    
     <!-- سایر بخش‌های صفحه -->
     <section id="services">
         <h2>راچار | خدمات تعمیر موبایل، لبتاب و وسایل الکترونیکی در محل</h2>
@@ -93,33 +115,41 @@
     <p id="repairCost"></p>
     </section>
 
-    <section id="payment-receipt">
-    <h2>ارسال رسید پرداخت</h2>
-    
-    <div class="bank-info">
-        <h3>اطلاعات بانکی برای واریز:</h3>
-        <div class="bank-card">
-            <p><strong>شماره کارت:</strong> <span id="cardNumber">6037997321690969</span></p>
-            <button onclick="copyToClipboard('cardNumber')" class="copy-button">کپی شماره کارت</button>
+<!-- بخش پرداخت و ارسال رسید (بهبود یافته) -->
+<section id="payment-receipt" class="payment-section">
+    <div class="payment-container">
+        <h2>پرداخت و ارسال رسید</h2>
+        <div class="payment-card">
+            <div class="bank-info">
+                <h3>اطلاعات بانکی برای واریز</h3>
+                <div class="bank-card">
+                    <div class="bank-details">
+                        <p class="bank-label">شماره کارت:</p>
+                        <p class="bank-value" id="cardNumber">6037997321690969</p>
+                    </div>
+                    <button onclick="copyToClipboard('cardNumber')" class="copy-button">کپی</button>
+                </div>
+                
+                <div class="bank-card">
+                    <div class="bank-details">
+                        <p class="bank-label">شماره شبا:</p>
+                        <p class="bank-value" id="shabaNumber">850170000000353899153005</p>
+                    </div>
+                    <button onclick="copyToClipboard('shabaNumber')" class="copy-button">کپی</button>
+                </div>
+                
+                <p class="bank-notice">پس از واریز، لطفاً رسید پرداخت را از طریق واتساپ ارسال کنید</p>
+            </div>
+            
+            <a href="https://wa.me/989123213854?text=باسلام، رسید پرداخت من بابت تعمیر وسیله الکتریکی در مرکز تعمیرات راچار:" 
+               class="whatsapp-button" 
+               target="_blank" 
+               rel="noopener noreferrer">
+               <span>📲 ارسال رسید از طریق واتساپ</span>
+            </a>
         </div>
-        
-        <div class="bank-card">
-            <p><strong>شماره شبا:</strong> <span id="shabaNumber">850170000000353899153005</span></p>
-            <button onclick="copyToClipboard('shabaNumber')" class="copy-button">کپی شماره شبا</button>
-        </div>
-        
-        <p class="bank-notice">پس از واریز، لطفاً رسید پرداخت را از طریق واتساپ ارسال کنید:</p>
     </div>
-    
-    <a href="https://wa.me/989123213854?text=باسلام، رسید پرداخت من بابت تعمیر وسیله الکتریکی در مرکز تعمیرات راچار:" 
-       class="button whatsapp-button" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       ارسال رسید از طریق واتساپ
-    </a>
-    
-    <p>یا می‌توانید مستقیماً به شماره <strong>09123213854</strong> در واتساپ پیام دهید.</p>
-    </section>
+</section>
     
     <section id="location">
         <h2>موقعیت راچار 📍</h2>
