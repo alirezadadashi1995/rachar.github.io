@@ -13,6 +13,7 @@ header {
     color: #000; /* مشکی */
     padding: 40px 20px;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 header h1 {
@@ -29,7 +30,7 @@ header p {
     width: 150px; /* اندازه‌ی لوگو */
     height: auto;
     margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover {
@@ -169,7 +170,7 @@ footer {
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
-    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
 }
 
 footer.visible {
@@ -275,6 +276,7 @@ iframe.visible {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .slide {
     position: absolute;
@@ -367,193 +369,242 @@ iframe.visible {
     color: #333;
 }
 
-/* استایل دکمه واتساپ */
-.whatsapp-button {
-    display: inline-block;
-    background: #25D366; /* رنگ سبز واتساپ */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+
+
+
+/* استایل بخش سفارش کالا */
+#product-order {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.whatsapp-button:hover {
-    transform: scale(1.05);
-    background-color: #128C7E; /* رنگ تیره‌تر واتساپ */
+#product-order h2 {
+    color: #000;
+    border-bottom: 2px solid #000;
 }
 
-#payment-receipt {
-    background: #fff;
+.order-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-/* استایل بخش اطلاعات بانکی */
-.bank-info {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
+.step:hover {
+    transform: translateY(-10px);
 }
 
-.bank-info h3 {
-    color: #FFA500;
-    margin-top: 0;
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #FFA500;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
     font-size: 1.2em;
 }
 
-.bank-card {
-    background: white;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.order-button {
+    background: #000;
+    color: #FFD700;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    display: block;
+    max-width: 300px;
 }
 
-.bank-card p {
-    margin: 0;
-    font-family: monospace;
-    direction: ltr;
-    text-align: left;
+.order-button:hover {
+    background: #333;
+    color: #FFD700;
 }
 
-.bank-card strong {
-    color: #333;
+.order-benefits {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
 }
 
-.copy-button {
-    background: #FFD700;
+.order-benefits h3 {
     color: #000;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.3s;
+    margin-top: 0;
 }
 
-.copy-button:hover {
-    background: #FFA500;
-    transform: scale(1.05);
+.order-benefits ul {
+    text-align: right;
+    padding-right: 20px;
 }
 
-.bank-notice {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 15px;
+.order-benefits li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    position: relative;
+    padding-right: 25px;
+}
+
+.order-benefits li:before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: green;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
-    .bank-card {
+    .order-steps {
         flex-direction: column;
-        align-items: flex-start;
     }
-    .copy-button {
-        margin-top: 8px;
-        align-self: flex-end;
+    
+    .step {
+        margin-bottom: 20px;
     }
 }
 
-/* استایل‌های جدید برای دکمه‌های اصلی */
-.main-actions {
-    max-width: 1000px;
+/* استایل بخش خدمات تعمیرات */
+#repair-services {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    padding: 30px;
     margin: 30px auto;
-    padding: 0 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.action-buttons {
+#repair-services h2 {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.service-steps {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin: 30px 0;
     flex-wrap: wrap;
 }
 
-.action-button {
+.service-steps .step {
     flex: 1;
-    min-width: 300px;
-    padding: 25px;
+    min-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
-    color: #000;
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+.service-steps .step:hover {
+    transform: translateY(-10px);
+}
+
+.service-steps .step-number {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.service-benefits {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.service-benefits h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.service-benefits ul {
+    text-align: right;
+    padding-right: 20px;
+    color: #fff;
+}
+
+.service-benefits li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    position: relative;
+    padding-right: 25px;
+}
+
+.service-benefits li:before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #FFD700;
     font-weight: bold;
-    font-size: 1.3em;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.action-button span {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.action-button p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: normal;
-    opacity: 0.9;
 }
 
 .repair-button {
-    background: #FFA500;
-    border: 2px solid #FF8C00;
-}
-
-.buy-button {
     background: #FFD700;
-    border: 2px solid #FFA500;
-}
-
-.action-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.secondary-actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.secondary-button {
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
+    color: #000000;
     font-weight: bold;
-    transition: all 0.3s ease;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    display: block;
+    max-width: 300px;
 }
 
-.payment-button {
+.repair-button:hover {
+    background: #000000;
+    color: #2E7D32;
+}
+
+/* استایل بخش پیگیری تعمیرات در بخش خدمات */
+#repair-request #tracking {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#repair-request #tracking h3 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+#repair-request #tracking input {
+    width: 70%;
+    margin: 10px auto;
+}
+
+#repair-request #tracking button {
     background: #4CAF50;
-    color: white;
+    color: #fff;
 }
 
-.contact-button {
-    background: #2196F3;
-    color: white;
+#repair-request #tracking button:hover {
+    background: #2E7D32;
 }
 
-.secondary-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
+
+
+
+
 
 /* استایل‌های جدید برای بخش پرداخت */
 .payment-section {
@@ -619,19 +670,46 @@ iframe.visible {
     transform: scale(1.05);
 }
 
-/* رسپانسیو */
-@media (max-width: 768px) {
-    .action-button {
-        min-width: 100%;
-    }
     
     .bank-card {
         flex-direction: column;
         align-items: flex-start;
     }
     
+#tracking input:focus {
+    border-color: #FFA500;
+    outline: none;
+}
+
+.copy-button {
+    background: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+
+.copy-button:hover {
+    background: #FFA500;
+    transform: scale(1.05);
+}
+
+.bank-notice {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .bank-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .copy-button {
-        margin-top: 10px;
+        margin-top: 8px;
         align-self: flex-end;
     }
 }
