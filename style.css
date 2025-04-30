@@ -697,11 +697,11 @@ iframe.visible {
 
 
 
-/* استایل آیکون پشتیبانی واتساپ */
+/* استایل اصلی آیکون پشتیبانی */
 .whatsapp-support {
     position: fixed;
     bottom: 20px;
-    left: 20px; /* تغییر از right به left برای نمایش در سمت راست در حالت RTL */
+    right: 20px; /* تغییر از left به right برای سمت راست */
     z-index: 9999;
     animation: pulse 2s infinite;
 }
@@ -709,7 +709,6 @@ iframe.visible {
 .whatsapp-support a {
     display: flex;
     align-items: center;
-    text-decoration: none;
     background: #25D366;
     color: white;
     padding: 10px 15px;
@@ -839,33 +838,27 @@ iframe.visible {
         margin: 15px auto;
     }
 }
+/* حالت موبایل */
 @media (max-width: 768px) {
     .whatsapp-support {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
+        bottom: 15px;
+        right: 15px;
+        width: auto; /* عرض خودکار */
     }
     
     .whatsapp-support a {
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 8px 12px;
+        width: auto; /* جلوگیری از کشیده شدن */
     }
     
     .whatsapp-icon {
-        width: 30px;
-        height: 30px;
-        margin: 0;
+        width: 35px;
+        height: 35px;
+        margin-left: 0; /* حذف margin اضافه */
     }
     
     .support-text {
-        display: none;
+        font-size: 0.8em;
+        display: inline; /* نمایش متن در صورت فضای کافی */
     }
 }
