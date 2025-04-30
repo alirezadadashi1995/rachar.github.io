@@ -760,14 +760,6 @@ iframe.visible {
 }
 
 
-
-@media (max-width: 768px) {
-    .repair-button, .order-button {
-        padding: 16px 30px;
-        font-size: 1.2em;
-    }
-}
-
 @media (max-width: 768px) {
     .order-steps {
         flex-direction: column;
