@@ -35,27 +35,28 @@
     </script>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
-        <h1>راچار، تعمیر تخصصی و فروش کالا سیار</h1>
-        <p></p>بیش از ۱۰ سال سابقه در کسب رضایت مشتری 🥇</p>
-        
-       <!-- منوی اصلی -->
+  <header>
+    <!-- نوار منوی بالا با لوگو -->
+    <div class="header-top">
         <nav class="main-nav">
             <ul>
-                <li><a href="#repair-services"><i class="icon-tools"></i> درخواست تعمیر</a></li>
-                <li><a href="#product-order"><i class="icon-cart"></i> درخواست کالا</a></li>
-                <li><a href="#payment-receipt"><i class="icon-credit-card"></i> پرداخت و رسید</a></li>
-                <li><a href="#phone-numbers"><i class="icon-phone"></i> تماس با ما</a></li>
+                <li><a href="#repair-services"><i class="fas fa-tools"></i> درخواست تعمیر</a></li>
+                <li><a href="#product-order"><i class="fas fa-shopping-cart"></i> درخواست کالا</a></li>
+                <li><a href="#payment-receipt"><i class="fas fa-credit-card"></i> پرداخت و رسید</a></li>
+                <li><a href="#phone-numbers"><i class="fas fa-phone"></i> تماس با ما</a></li>
             </ul>
         </nav>
+        
+        <!-- لوگو در سمت چپ (به دلیل RTL) -->
+        <img src="logo.png" alt="لوگوی راچار" class="header-logo">
+    </div>
 
-        <!-- آیکون منوی ساندویچی -->
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-
-        <!-- Overlay برای بستن منو -->
-        <div class="overlay" onclick="toggleMenu()"></div>
-    </header>
+    <!-- اسلایدر در هدر -->
+    <div class="header-slider">
+        <div class="slide active"><img src="slide1.jpg" alt="جایزه 50 میلیون تومانی"></div>
+        <div class="slide"><img src="slide2.jpg" alt="برندگان اسفندماه"></div>
+    </div>
+  </header>
 
 
     <!-- اسلایدر تصاویر -->
