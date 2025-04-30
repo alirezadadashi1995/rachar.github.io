@@ -43,6 +43,12 @@ document.querySelector(".slider").addEventListener("touchend", (e) => {
     }
 });
 
+document.querySelectorAll('.main-nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMenu();
+    });
+});
+
 document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         checkRepairStatus(); // جستجو به محض فشردن اینتر
