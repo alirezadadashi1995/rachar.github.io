@@ -247,63 +247,6 @@ iframe.visible {
     transform: scale(1);
 }
 
-/* استایل‌های موبایل */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .main-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        background: #FFD700; /* زرد */
-        z-index: 1000;
-        transition: right 0.3s ease;
-    }
-
-    .main-nav.active {
-        display: block;
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding-top: 60px;
-    }
-
-    .main-nav ul li {
-        margin: 15px 0;
-    }
-
-    .main-nav ul li a {
-        color: #000; /* مشکی */
-        font-size: 1.2em;
-    }
-
-    .main-nav ul li a:hover {
-        color: #FFA500; /* نارنجی */
-    }
-    
-    /* پس‌زمینه تاری */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .overlay.active {
-        display: block;
-    }
-}
 
 /* استایل اسلایدر */
 .slider {
@@ -462,20 +405,30 @@ iframe.visible {
     font-size: 1.2em;
 }
 
+/* دکمه ثبت سفارش کالا */
 .order-button {
-    background: #000;
-    color: #FFD700;
+    display: inline-block;
+    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
     margin: 20px auto;
-    display: block;
-    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
 }
 
 .order-button:hover {
-    background: #333;
-    color: #FFD700;
+    background: linear-gradient(135deg, #88DAC7, #4ECDC4);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.6);
 }
 
 .order-benefits {
@@ -508,16 +461,6 @@ iframe.visible {
     right: 0;
     color: green;
     font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .order-steps {
-        flex-direction: column;
-    }
-    
-    .step {
-        margin-bottom: 20px;
-    }
 }
 
 /* استایل بخش خدمات تعمیرات */
@@ -596,20 +539,30 @@ iframe.visible {
     font-weight: bold;
 }
 
+/* دکمه ثبت درخواست تعمیر */
 .repair-button {
-    background: #FFD700;
-    color: #000000;
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
     margin: 20px auto;
-    display: block;
-    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
 }
 
 .repair-button:hover {
-    background: #000000;
-    color: #FFD700;
+    background: linear-gradient(135deg, #FF8E8E, #FF6B6B);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
 }
 
 /* استایل بخش پیگیری تعمیرات در بخش خدمات */
@@ -740,6 +693,89 @@ iframe.visible {
     font-size: 0.9em;
     color: #666;
     margin-top: 15px;
+}
+
+
+
+
+
+
+
+/* استایل‌های موبایل */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100%;
+        background: #FFD700; /* زرد */
+        z-index: 1000;
+        transition: right 0.3s ease;
+    }
+
+    .main-nav.active {
+        display: block;
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .main-nav ul li {
+        margin: 15px 0;
+    }
+
+    .main-nav ul li a {
+        color: #000; /* مشکی */
+        font-size: 1.2em;
+    }
+
+    .main-nav ul li a:hover {
+        color: #FFA500; /* نارنجی */
+    }
+    
+    /* پس‌زمینه تاری */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .repair-button, .order-button {
+        padding: 16px 30px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-steps {
+        flex-direction: column;
+    }
+    
+    .step {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 768px) {
