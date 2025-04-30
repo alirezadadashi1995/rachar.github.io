@@ -111,22 +111,6 @@ header p {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
-    .main-nav ul li a {
-        justify-content: center;
-        padding: 12px 20px;
-        margin: 5px 0;
-    }
-    
-    .main-nav ul {
-        padding-top: 80px;
-    }
-    
-    .main-nav ul li {
-        margin: 10px 0;
-        width: 80%;
-    }
-}
 
 .menu-icon {
     display: none;
@@ -286,7 +270,24 @@ iframe.visible {
         right: 0;
     }
 
+    .main-nav ul {
+        flex-direction: column;
+        padding-top: 60px;
+    }
 
+    .main-nav ul li {
+        margin: 15px 0;
+    }
+
+    .main-nav ul li a {
+        color: #000; /* مشکی */
+        font-size: 1.2em;
+    }
+
+    .main-nav ul li a:hover {
+        color: #FFA500; /* نارنجی */
+    }
+    
     /* پس‌زمینه تاری */
     .overlay {
         display: none;
