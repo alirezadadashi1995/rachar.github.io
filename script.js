@@ -143,3 +143,13 @@ function checkRepairStatus() {
         document.getElementById("repairCost").innerHTML = "";
     });
 }
+
+// نمایش آیکون پس از اسکرول کاربر
+window.addEventListener('scroll', function() {
+    const whatsappSupport = document.querySelector('.whatsapp-support');
+    if (window.scrollY > 300) {
+        whatsappSupport.style.display = 'block';
+    } else {
+        whatsappSupport.style.display = 'none';
+    }
+});
