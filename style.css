@@ -830,23 +830,44 @@ iframe.visible {
     }
 }
 
-/*پشتیبانی حالت موبایل */
 @media (max-width: 768px) {
+    /* دکمه‌های ثبت درخواست */
+    .repair-button, .order-button {
+        padding: 12px 20px;
+        font-size: 1em;
+        max-width: 90%;
+        margin: 15px auto;
+    }
+    
+    /* آیکون واتساپ */
     .whatsapp-support {
-        bottom: 15px;
-        left: 15px;
+        bottom: 10px;
+        left: 10px;
     }
     
     .whatsapp-support a {
-        padding: 8px 12px;
+        padding: 6px 10px;
     }
     
     .whatsapp-icon {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
     
     .support-text {
-        font-size: 0.9em;
+        font-size: 0.8em;
+        display: none; /* مخفی کردن متن در موبایل برای صرفه‌جویی در فضا */
+    }
+    
+    /* بخش‌های اصلی */
+    section {
+        padding: 15px;
+        margin: 15px auto;
+        width: 95%;
+    }
+    
+    /* اسلایدر */
+    .slider {
+        height: 200px;
     }
 }
