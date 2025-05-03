@@ -43,19 +43,32 @@ document.querySelector(".slider").addEventListener("touchend", (e) => {
     }
 });
 
-document.querySelectorAll('.main-nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        toggleMenu();
-    });
+// انتخاب عناصر مورد نیاز
+const hamburger = document.querySelector('.menu-icon');
+const navMenu = document.querySelector('.main-nav');
+const overlay = document.querySelector('.overlay');
+
+// تابع باز و بسته کردن منو
+function toggleMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+
+// بستن منو هنگام کلیک روی هر لینک منو
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
 });
 
-// بستن منو وقتی روی لینک کلیک می‌شود
-document.querySelectorAll(".nav-link").forEach(n => 
-  n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  })
-);
+// بستن منو با کلیک روی Overlay
+overlay.addEventListener('click', toggleMenu);
+
+// باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
+
 
 document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
