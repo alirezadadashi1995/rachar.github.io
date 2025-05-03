@@ -69,6 +69,17 @@ overlay.addEventListener('click', toggleMenu);
 
 // باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
 
+// بستن منو با کلید Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+});
+
+
+
 
 document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
