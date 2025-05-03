@@ -49,6 +49,14 @@ document.querySelectorAll('.main-nav ul li a').forEach(link => {
     });
 });
 
+// بستن منو وقتی روی لینک کلیک می‌شود
+document.querySelectorAll(".nav-link").forEach(n => 
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
+
 document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         checkRepairStatus(); // جستجو به محض فشردن اینتر
