@@ -796,21 +796,24 @@ iframe.visible {
     }
     
     /* پس‌زمینه تاری */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .overlay.active {
-        display: block;
-    }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* رنگ تار */
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 @media (max-width: 768px) {
     .order-steps {
