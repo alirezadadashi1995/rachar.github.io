@@ -135,22 +135,6 @@ header p {
     left: 20px;
     color: #fff; /* سفید */
 }
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 h2 {
     color: #000; /* مشکی */
@@ -180,41 +164,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-.button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
-}
-
-.phone-button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
-    animation: pulse 2s infinite;
-}
-
-.phone-button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
 }
 
 footer {
