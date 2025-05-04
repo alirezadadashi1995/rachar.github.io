@@ -71,17 +71,51 @@
 
 
     <!-- اسلایدر تصاویر -->
-<div class="slider">
-    <div class="slide active"><img src="image1.jpg" alt="تصویر ۱"></div>
-    <div class="slide"><img src="image2.jpg" alt="تصویر ۲"></div>
-    <div class="slide"><img src="image3.jpg" alt="تصویر ۳"></div>
-    <div class="slide"><img src="image4.jpg" alt="تصویر ۴"></div>
-</div>
-<div class="slider-controls">
-    <button id="prevSlide">❮</button>
-    <button id="nextSlide">❯</button>
-</div>
+<div class="slider-container">
+  <div class="slide active">
+    <div class="slide-content">
+      <div class="slide-text">
+        <h1>نگو نداری چاره! تنها راهت راچاره</h1>
+      </div>
+      <div class="slide-image">
+        <img src="images/slide1.png" alt="slide1">
+      </div>
+    </div>
+  </div>
 
+  <div class="slide">
+    <div class="slide-content">
+      <div class="slide-text">
+        <h1>راچار، چاره هر کار</h1>
+      </div>
+      <div class="slide-image">
+        <img src="images/slide2.png" alt="slide2">
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="slide-content">
+      <div class="slide-text">
+        <h1>راچار، آچار سیار</h1>
+      </div>
+      <div class="slide-image">
+        <img src="images/slide3.png" alt="slide3">
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="slide-content">
+      <div class="slide-text">
+        <h1>راچار، کالا زیر قیمت بازار</h1>
+      </div>
+      <div class="slide-image">
+        <img src="images/slide4.png" alt="slide4">
+      </div>
+    </div>
+  </div>
+</div>
     <!-- سایر بخش‌های صفحه -->
 <section id="services">
     <h2><b>چرا راچار؟</b></h2>
@@ -231,14 +265,14 @@
         <p>مدیریت: علیرضا داداشی</p>
         <p>
             <a href="https://www.instagram.com/rachar.ir" target="_blank" rel="noopener noreferrer">
-                <img src="instagram-icon.png" alt="اینستاگرام" class="social-icon">
+                <img src="images/instagram-icon.png" alt="اینستاگرام" class="social-icon">
             </a>
             <a href="https://eitaa.com/rachar" target="_blank" rel="noopener noreferrer">
-                <img src="eitaa-icon.png" alt="ایتا" class="social-icon">
+                <img src="images/eitaa-icon.png" alt="ایتا" class="social-icon">
             </a>
         </p>
         <p>تمام حقوق این سایت متعلق به گروه تعمیراتی راچار است©</p>
-        <img src="logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
+        <img src="images/logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
     </footer>
 
     <script>
@@ -289,15 +323,41 @@
             window.addEventListener("scroll", checkVisibility);
             checkVisibility(); // بررسی اولیه
         });
+
+
+      
     </script>
     <script src="script.js"></script>
 
     <!-- آیکون پشتیبانی واتساپ -->
     <div class="whatsapp-support">
       <a href="https://wa.me/989123213854" target="_blank" rel="noopener noreferrer">
-          <img src="whatsapp-icon.png" alt="پشتیبانی واتساپ" class="whatsapp-icon">
+          <img src="images/whatsapp-icon.png" alt="پشتیبانی واتساپ" class="whatsapp-icon">
           <span class="support-text">پشتیبانی آنلاین</span>
       </a>
     </div>
+
+      <script>
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+  // شروع اولیه
+  showSlide(currentSlide);
+  // اسلاید بعدی هر 5 ثانیه
+  setInterval(nextSlide, 5000);
+</script>
+
 </body>
 </html>
