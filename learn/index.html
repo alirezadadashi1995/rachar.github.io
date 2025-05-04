@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>مطالب آموزشی | راچار</title>
+  <link rel="stylesheet" href="../style.css"> <!-- یا یک استایل جدید -->
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: orange;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: orange;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: orange;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>مطالب آموزشی راچار</header>
+  <section class="content">
+    <div class="card">
+      <h3>چرا نباید موبایل را در حمام ببرید؟</h3>
+      <p>رطوبت حمام می‌تواند به اجزای داخلی گوشی آسیب بزند و باعث سوختن برد شود.</p>
+      <a href="#">مطالعه کامل</a>
+    </div>
+    <div class="card">
+      <h3>چطور از شارژر به‌درستی استفاده کنیم؟</h3>
+      <p>رها کردن کلگی شارژ در پریز می‌تواند هم به خود شارژر و هم به برق خانه آسیب بزند.</p>
+      <a href="#">مطالعه کامل</a>
+    </div>
+    <!-- 🔁 ادامه کارت‌ها -->
+  </section>
+</body>
+</html>
 
