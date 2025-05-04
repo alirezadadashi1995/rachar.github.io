@@ -90,29 +90,29 @@ header p {
 }
 
 /* رنگ‌های متفاوت برای هر دکمه */
-/* رنگ‌های تیره‌تر و جذاب برای دکمه‌ها */
+/* رنگ‌های متعادل، شاد و نه‌چندان تیره */
 .main-nav ul li:nth-child(1) a {
-    background: linear-gradient(135deg, #8B0000, #A52A2A); /* قرمز تیره */
+    background: linear-gradient(135deg, #E63946, #FF6B6B); /* قرمز شاد ملایم */
     color: white;
 }
 
 .main-nav ul li:nth-child(2) a {
-    background: linear-gradient(135deg, #004d40, #00695c); /* سبز آبی تیره */
+    background: linear-gradient(135deg, #2A9D8F, #52B69A); /* سبز-آبی متعادل */
     color: white;
 }
 
 .main-nav ul li:nth-child(3) a {
-    background: linear-gradient(135deg, #5d4037, #795548); /* قهوه‌ای شکلاتی */
+    background: linear-gradient(135deg, #F4A261, #FFB566); /* نارنجی-هلویی ملایم */
     color: white;
 }
 
 .main-nav ul li:nth-child(4) a {
-    background: linear-gradient(135deg, #37474f, #455a64); /* خاکستری آبی تیره */
+    background: linear-gradient(135deg, #457B9D, #5FA8D3); /* آبی آرام ولی واضح */
     color: white;
 }
 
 .main-nav ul li:nth-child(5) a {
-    background: linear-gradient(135deg, #1a237e, #303f9f); /* آبی نفتی تیره */
+    background: linear-gradient(135deg, #6A4C93, #9D73C6); /* بنفش ملایم و متفاوت */
     color: white;
 }
 
