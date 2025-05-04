@@ -1,1 +1,414 @@
+/* استایل کلی صفحه مقالات */
+.education-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
+.education-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* استایل بخش مقالات */
+.articles-section {
+    padding: 2rem 0;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.article-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.article-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 1.5rem;
+}
+
+.article-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-excerpt {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    background: #4a6bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.read-more:hover {
+    background: #3a56d4;
+}
+
+/* استایل بخش راهکارهای تعمیراتی */
+.solutions-section {
+    padding: 3rem 0;
+    background: #f9f9f9;
+}
+
+.solution-accordion {
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.solution-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.solution-question {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    text-align: right;
+    background: #4a6bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.solution-question:hover {
+    background: #3a56d4;
+}
+
+.toggle-icon {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.solution-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.solution-answer.active {
+    padding: 1.5rem;
+    max-height: 2000px;
+}
+
+.solution-answer p, .solution-answer ol, .solution-answer ul {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.solution-answer strong {
+    color: #333;
+}
+
+.solution-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.solution-steps .step {
+    background: #f5f7ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-right: 3px solid #4a6bff;
+}
+
+.step-number {
+    display: inline-block;
+    background: #4a6bff;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* استایل مقالات کامل */
+.full-articles-section {
+    padding: 3rem 0;
+}
+
+.full-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-header {
+    margin-bottom: 2rem;
+}
+
+.article-main-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.article-body h3 {
+    color: #4a6bff;
+    margin: 2rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.problem-box {
+    background: #f9faff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-right: 3px solid #4a6bff;
+}
+
+.problem-box h4 {
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tip-card h4 {
+    color: #4a6bff;
+    margin-bottom: 0.5rem;
+}
+
+.article-warning {
+    background: #fff8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-right: 3px solid #ff4a4a;
+    margin: 2rem 0;
+}
+
+.article-warning h4 {
+    color: #ff4a4a;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* استایل بخش نکات نگهداری */
+.tips-section {
+    padding: 3rem 0;
+    background: #f5f7ff;
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tip-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tip-category h3 {
+    color: #4a6bff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.tip-category ul {
+    list-style-type: none;
+    padding-right: 1rem;
+}
+
+.tip-category li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-right: 1.5rem;
+    line-height: 1.6;
+}
+
+.tip-category li:before {
+    content: "•";
+    color: #4a6bff;
+    position: absolute;
+    right: 0;
+}
+
+/* استایل بخش سوالات */
+.questions-section {
+    padding: 3rem 0;
+}
+
+.questions-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #4a6bff;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.questions-card h2 {
+    margin-bottom: 1rem;
+}
+
+.questions-card p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.whatsapp-button, .phone-button {
+    display: inline-block;
+    background: white;
+    color: #4a6bff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover, .phone-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    .education-banner {
+        height: 200px;
+    }
+    
+    .banner-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-text p {
+        font-size: 1rem;
+    }
+    
+    .article-grid {
+        grid-template-columns: 1fr;
+   }
+}
