@@ -305,7 +305,8 @@ iframe.visible {
   font-weight: bold;
   color: white;
   line-height: 1.5;
-  text-align: right;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);  /* ✅ سایه‌ی مشکی ملایم */
 }
 
 /* عکس در سمت چپ و بزرگ‌تر */
@@ -321,6 +322,7 @@ iframe.visible {
   max-width: 100%;
   object-fit: contain;
   border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* ✅ سایه‌ی بزرگ‌تر و ملایم */
 }
 
 
