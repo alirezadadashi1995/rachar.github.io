@@ -264,63 +264,102 @@ iframe.visible {
 
 
 /* استایل اسلایدر */
-.slider {
-    position: relative;
-    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
-    height: auto;
-    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
-    margin: 0px auto;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: orange;
 }
+
 .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  display: none;
+  width: 100%;
+  height: 350px;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide.active {
-    opacity: 1;
+  display: flex;
+  animation: fade 1s;
 }
 
-.slide img {
+.slide-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+/* متن در سمت راست */
+.slide-text {
+  flex: 0 0 50%;
+  text-align: center;
+  padding-left: 20px;
+}
+
+.slide-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* عکس در سمت چپ و بزرگ‌تر */
+.slide-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-image img {
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+
+/* انیمیشن ساده */
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* ✅ حالت ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .slide-text, .slide-image {
+    max-width: 100%;
+    flex: none;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+  }
+
+  .slide-text {
+    text-align: center; /* ✅ وسط‌چین کردن متن در موبایل */
+  }
+    
+  .slide-text h1 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    text-align: center; /* ✅ مطمئن شو خود h1 هم وسطه */
+  }
+
+  .slide-image img {
+    max-height: 180px;
+  }
 }
 
-/* دکمه‌های کنترل اسلایدر */
-.slider-controls {
-    position: absolute;
-    width: 100%;
-    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
-    left: 0;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    pointer-events: none;
-}
-
-.slider-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 5px;
-    pointer-events: all;
-}
-
-
-.slider-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
 
 #tracking {
     background: #fff;
