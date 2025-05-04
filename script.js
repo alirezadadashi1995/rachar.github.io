@@ -1,23 +1,3 @@
-<script>
-  let slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  // شروع نمایش اولیه
-  showSlide(currentSlide);
-
-  // تعویض خودکار هر 5 ثانیه
-  setInterval(nextSlide, 5000);
-</script>
 
 // انتخاب عناصر مورد نیاز
 const hamburger = document.querySelector('.menu-icon');
