@@ -306,11 +306,7 @@ iframe.visible {
   color: white;
   line-height: 1.5;
   text-align: center;
-  /* ✅ استروک مشکی */
-  -webkit-text-stroke: 1px black;
-
-  /* ✅ برای زیبایی بیشتر */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);  /* ✅ سایه‌ی مشکی ملایم */
 }
 
 /* عکس در سمت چپ و بزرگ‌تر */
