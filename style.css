@@ -364,6 +364,7 @@ iframe.visible {
 
 #tracking {
     background: #fff;
+    width: 100%; /* عرض کامل صفحه */
     padding: 20px;
     margin: 20px auto;
     max-width: 500px;
@@ -412,6 +413,7 @@ iframe.visible {
 /* استایل بخش سفارش کالا */
 #product-order {
     background: linear-gradient(135deg, #FFD700, #FFA500);
+    width: 100%; /* عرض کامل صفحه */
     color: #000;
     padding: 30px;
     margin: 30px auto;
@@ -522,6 +524,7 @@ iframe.visible {
 /* استایل بخش خدمات تعمیرات */
 #repair-services {
     background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    width: 100%; /* عرض کامل صفحه */
     color: #fff;
     padding: 30px;
     margin: 30px auto;
@@ -657,6 +660,7 @@ iframe.visible {
 
 /* استایل‌های جدید برای بخش پرداخت */
 .payment-section {
+    width: 100%; /* عرض کامل صفحه */
     background: #f9f9f9;
     padding: 30px 0;
 }
