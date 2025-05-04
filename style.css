@@ -322,7 +322,6 @@ iframe.visible {
   max-width: 100%;
   object-fit: contain;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* ✅ سایه‌ی بزرگ‌تر و ملایم */
 }
 
 
