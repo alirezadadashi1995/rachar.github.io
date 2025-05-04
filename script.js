@@ -1,40 +1,4 @@
 
-// انتخاب عناصر مورد نیاز
-const hamburger = document.querySelector('.menu-icon');
-const navMenu = document.querySelector('.main-nav');
-const overlay = document.querySelector('.overlay');
-
-// تابع باز و بسته کردن منو
-function toggleMenu() {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-  overlay.classList.toggle('active');
-}
-
-// بستن منو هنگام کلیک روی هر لینک منو
-document.querySelectorAll('.main-nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-});
-
-// بستن منو با کلیک روی Overlay
-overlay.addEventListener('click', toggleMenu);
-
-// باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
-
-// بستن منو با کلید Escape
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    overlay.classList.remove('active');
-  }
-
-
-
   document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         checkRepairStatus(); // جستجو به محض فشردن اینتر
