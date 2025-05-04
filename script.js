@@ -52,12 +52,10 @@ document.addEventListener('keydown', function(e) {
     navMenu.classList.remove('active');
     overlay.classList.remove('active');
   }
-});
 
 
 
-
-document.getElementById("trackingCode").addEventListener("keypress", function(e) {
+  document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         checkRepairStatus(); // جستجو به محض فشردن اینتر
     }
@@ -151,3 +149,13 @@ function checkRepairStatus() {
         document.getElementById("repairCost").innerHTML = "";
     });
 }
+
+// نمایش آیکون پس از اسکرول کاربر
+window.addEventListener('scroll', function() {
+    const whatsappSupport = document.querySelector('.whatsapp-support');
+    if (window.scrollY > 300) {
+        whatsappSupport.style.display = 'block';
+    } else {
+        whatsappSupport.style.display = 'none';
+    }
+});
