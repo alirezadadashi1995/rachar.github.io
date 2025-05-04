@@ -1,3 +1,142 @@
+body {
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: #FFA500; /* نارنجی */
+    color: #000; /* مشکی */
+    padding: 40px 20px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+.logo {
+    width: 150px; /* اندازه‌ی لوگو */
+    height: auto;
+    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
+}
+
+.main-nav {
+    margin-top: 0; /* حذف فاصله بالا */
+    background: #FFA500; /* نارنجی */
+    position: fixed; /* ثابت کردن موقعیت */
+    top: 0; /* قرار دادن در بالای صفحه */
+    left: 0; /* قرار دادن در سمت چپ صفحه */
+    width: 100%; /* عرض کامل صفحه */
+    z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+/* آیکون‌های فونت-آوسام */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.main-nav ul li a i {
+    font-size: 1.2em;
+}
+
+/* رنگ‌های متفاوت برای هر دکمه */
+.main-nav ul li:nth-child(1) a {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+}
+
+.main-nav ul li:nth-child(2) a {
+    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
+}
+
+.main-nav ul li:nth-child(3) a {
+    background: linear-gradient(135deg, #FFD166, #FFB347);
+}
+
+.main-nav ul li:nth-child(4) a {
+    background: linear-gradient(135deg, #06D6A0, #48BFE3);
+}
+
+.main-nav ul li a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* دکمه بستن منو */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  display: none; /* پیش‌فرض: پنهان */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff; /* سفید */
+}
+
+
 /* استایل کلی صفحه آموزشی */
 .intro-section {
     background-color: #f9f9f9;
