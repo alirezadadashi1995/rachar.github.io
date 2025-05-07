@@ -888,9 +888,9 @@ iframe.visible {
 
 /* دکمه‌های شناور */
 .floating-buttons {
-    display: none; /* پیش‌فرض مخفی */
     position: fixed;
     z-index: 9999;
+    display: flex;
     flex-direction: column;
     gap: 15px;
     animation: float 3s ease-in-out infinite;
