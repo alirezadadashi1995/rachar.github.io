@@ -887,18 +887,18 @@ iframe.visible {
 }
 
 /* دکمه‌های شناور */
-/* استایل پایه دکمه‌های شناور برای همه دستگاه‌ها */
+/* استایل کلی دکمه‌های شناور */
 .floating-buttons-container {
     position: fixed;
+    bottom: 20px;
     width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
     pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
+    z-index: 1000;
 }
 
 .floating-buttons {
-    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -906,106 +906,86 @@ iframe.visible {
 }
 
 .right-buttons {
-    bottom: 30px;
-    right: 30px;
+    right: 20px;
+    align-items: flex-end;
 }
 
 .left-buttons {
-    bottom: 30px;
-    left: 30px;
+    left: 20px;
+    align-items: flex-start;
 }
 
 .floating-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 20px;
-    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     color: white;
-    font-weight: bold;
-    font-size: 15px;
     text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translateY(0);
-    opacity: 0.95;
-    animation: float 5s ease-in-out infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .floating-btn i {
-    margin-left: 10px;
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    font-size: 20px;
 }
 
 .btn-text {
-    transition: transform 0.3s ease;
+    display: none;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
-/* رنگ‌بندی و افکت‌های دکمه‌ها */
+/* رنگ‌های مختلف برای دکمه‌ها */
 .repair-btn {
-    background: linear-gradient(135deg, #FF8C00, #FF6B00);
+    background-color: #ff5722;
 }
 
 .order-btn {
-    background: linear-gradient(135deg, #FFD700, #FFB800);
-    animation-delay: 0.3s;
+    background-color: #4caf50;
 }
 
 .whatsapp-btn {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    animation-delay: 0.2s;
+    background-color: #25d366;
 }
 
 .call-btn {
-    background: linear-gradient(135deg, #FF3B30, #C62828);
-    animation-delay: 0.4s;
-}
-
-/* انیمیشن شناور */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    background-color: #2196f3;
 }
 
 /* افکت hover */
 .floating-btn:hover {
-    transform: translateY(-5px) scale(1.05) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.floating-btn:hover i {
-    transform: rotate(10deg);
-}
-
+/* نمایش متن در حالت hover */
 .floating-btn:hover .btn-text {
-    transform: translateX(3px);
+    display: inline-block;
 }
 
-/* نسخه موبایل */
+/* برای دستگاه‌های موبایل */
 @media (max-width: 768px) {
-    .right-buttons {
-        bottom: 20px;
-        right: 15px;
+    .floating-buttons-container {
+        justify-content: space-around;
+        bottom: 10px;
     }
     
-    .left-buttons {
-        bottom: 20px;
-        left: 15px;
+    .floating-buttons {
+        flex-direction: row;
+        gap: 10px;
     }
     
     .floating-btn {
-        padding: 10px 15px;
-        font-size: 14px;
+        width: 45px;
+        height: 45px;
     }
     
-    .floating-btn i {
-        font-size: 16px;
-        margin-left: 8px;
+    .btn-text {
+        display: none !important;
     }
 }
