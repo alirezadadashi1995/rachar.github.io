@@ -579,131 +579,70 @@ iframe.visible {
     }
 }
 
-/* استایل اصلی آیکون پشتیبانی */
-.whatsapp-support {
+/* دکمه‌های شناور (مشترک) */
+.floating-button {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* تغییر از left به right برای سمت راست */
     z-index: 9999;
     animation: pulse 2s infinite;
 }
 
-.whatsapp-support a {
+.floating-button a {
     display: flex;
     align-items: center;
-    background: #25D366;
+    background: #555;
     color: white;
     padding: 10px 15px;
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.whatsapp-support a:hover {
-    background: #128C7E;
+.floating-button a:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px; /* فاصله بین آیکون و متن */
+/* دکمه واتساپ */
+.floating-button.whatsapp {
+    right: 20px;
 }
 
+.floating-button.whatsapp a {
+    background-color: #25D366;
+}
+
+.floating-button.whatsapp a:hover {
+    background-color: #128C7E;
+}
+
+/* دکمه خانه */
+.floating-button.home {
+    left: 20px;
+}
+
+.floating-button.home a {
+    background-color: #007bff;
+}
+
+.floating-button.home a:hover {
+    background-color: #0056b3;
+}
+
+/* آیکون‌ها */
+.floating-button i {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+/* متن پشتیبانی */
 .support-text {
     font-weight: bold;
     font-size: 1em;
 }
 
-/* انیمیشن پالس برای جلب توجه */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-@media (max-width: 768px) {
-    .article-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .article-date {
-        align-self: flex-end;
-    }
-}
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .whatsapp-support {
-        bottom: 15px;
-        right: 15px;
-        width: auto; /* عرض خودکار */
-    }
-    
-    .whatsapp-support a {
-        padding: 8px 12px;
-        width: auto; /* جلوگیری از کشیده شدن */
-    }
-    
-    .whatsapp-support i {
-  font-size: 1.2em;
-    margin-right: 10px; /* فاصله بین آیکون و متن */
-    }
-    
-    .support-text {
-        font-size: 0.8em;
-        display: inline; /* نمایش متن در صورت فضای کافی */
-    }
-}
-/* فقط در صفحه‌های کوچک (موبایل) نمایش داده شود */
-@media (max-width: 768px) {
-  .close-btn {
-    display: block;
-  }
-}
-
-/* دکمه بازگشت به صفحه اصلی - قرینه دکمه واتساپ */
-.home-support {
-    position: fixed;
-    bottom: 20px;
-    left: 20px; /* قرینه سمت راست */
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-
-.home-support a {
-    display: flex;
-    align-items: center;
-    background: #FF8C00; /* نارنجی تیره‌تر */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    flex-direction: row-reverse; /* معکوس برای رعایت راست‌چین */
-    text-decoration: none;
-}
-
-.home-support a:hover {
-    background: #FF7000;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.home-support i {
-    font-size: 1.2em;
-    margin-right: 10px; /* فاصله بین آیکون و متن */
-}
-
-/* انیمیشن پالس یکسان با دکمه واتساپ */
+/* انیمیشن پالس */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -712,21 +651,29 @@ iframe.visible {
 
 /* حالت موبایل */
 @media (max-width: 768px) {
-    .home-support {
+    .floating-button {
         bottom: 15px;
+    }
+
+    .floating-button.whatsapp {
+        right: 15px;
+    }
+
+    .floating-button.home {
         left: 15px;
     }
-    
-    .home-support a {
+
+    .floating-button a {
         padding: 8px 12px;
     }
-    
-    .home-support i {
-        font-size: 1em;
-        margin-right: 8px;
+
+    .floating-button i {
+        font-size: 1.2em;
+        margin-left: 6px;
     }
-    
+
     .support-text {
         font-size: 0.8em;
     }
 }
+
