@@ -887,21 +887,30 @@ iframe.visible {
 }
 
 /* دکمه‌های شناور */
-.floating-buttons {
+/* استایل پایه دکمه‌های شناور برای همه دستگاه‌ها */
+.floating-buttons-container {
     position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 9999;
+    overflow: hidden;
+}
+
+.floating-buttons {
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    animation: float 3s ease-in-out infinite;
+    pointer-events: auto;
 }
 
-.floating-buttons.right {
+.right-buttons {
     bottom: 30px;
     right: 30px;
 }
 
-.floating-buttons.left {
+.left-buttons {
     bottom: 30px;
     left: 30px;
 }
@@ -917,33 +926,43 @@ iframe.visible {
     font-size: 15px;
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(0);
+    opacity: 0.95;
+    animation: float 5s ease-in-out infinite;
 }
 
 .floating-btn i {
-    margin-left: 8px;
+    margin-left: 10px;
     font-size: 18px;
+    transition: transform 0.3s ease;
 }
 
-/* رنگ‌بندی دکمه‌ها */
-.floating-buttons.right .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #FF8C00, #FFA500);
+.btn-text {
+    transition: transform 0.3s ease;
 }
 
-.floating-buttons.right .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #FFD700, #FFC000);
+/* رنگ‌بندی و افکت‌های دکمه‌ها */
+.repair-btn {
+    background: linear-gradient(135deg, #FF8C00, #FF6B00);
 }
 
-.floating-buttons.left .floating-btn:nth-child(1) {
+.order-btn {
+    background: linear-gradient(135deg, #FFD700, #FFB800);
+    animation-delay: 0.3s;
+}
+
+.whatsapp-btn {
     background: linear-gradient(135deg, #25D366, #128C7E);
+    animation-delay: 0.2s;
 }
 
-.floating-buttons.left .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #E53935, #C62828);
+.call-btn {
+    background: linear-gradient(135deg, #FF3B30, #C62828);
+    animation-delay: 0.4s;
 }
 
-/* انیمیشن‌ها */
+/* انیمیشن شناور */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -953,51 +972,40 @@ iframe.visible {
     }
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
+/* افکت hover */
+.floating-btn:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    opacity: 1;
 }
 
-/* حالت hover */
-.floating-btn:hover {
-    transform: scale(1.1) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+.floating-btn:hover i {
+    transform: rotate(10deg);
+}
+
+.floating-btn:hover .btn-text {
+    transform: translateX(3px);
 }
 
 /* نسخه موبایل */
 @media (max-width: 768px) {
-    .floating-buttons {
-        gap: 10px;
-    }
-    
-    .floating-buttons.right {
+    .right-buttons {
         bottom: 20px;
         right: 15px;
     }
     
-    .floating-buttons.left {
+    .left-buttons {
         bottom: 20px;
         left: 15px;
     }
     
     .floating-btn {
         padding: 10px 15px;
-        font-size: 13px;
+        font-size: 14px;
     }
     
     .floating-btn i {
         font-size: 16px;
-        margin-left: 6px;
+        margin-left: 8px;
     }
 }
-
