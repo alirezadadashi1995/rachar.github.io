@@ -764,59 +764,6 @@ iframe.visible {
 
 
 
-/* استایل اصلی آیکون پشتیبانی */
-.whatsapp-support {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* تغییر از left به right برای سمت راست */
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-support a {
-    display: flex;
-    align-items: center;
-    background: #25D366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.whatsapp-support a:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px; /* فاصله بین آیکون و متن */
-}
-
-.support-text {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-/* انیمیشن پالس برای جلب توجه */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-
 /* استایل‌های موبایل */
 @media (max-width: 768px) {
     .menu-icon {
@@ -936,5 +883,82 @@ iframe.visible {
 @media (max-width: 768px) {
   .close-btn {
     display: block;
+  }
+}
+
+
+/* موقعیت کلی دکمه‌ها */
+.floating-buttons {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-buttons.right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-buttons.left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.floating-buttons a {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-buttons a i {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* رنگ‌ها و حالت‌ها */
+.floating-buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+.floating-buttons a:nth-child(1) {
+  background-color: #FF8C00; /* نارنجی - ثبت تعمیری یا واتساپ */
+}
+
+.floating-buttons.right a:nth-child(2) {
+  background-color: #FFD700; /* زرد - سفارش کالا */
+}
+
+.floating-buttons.left a:nth-child(2) {
+  background-color: #E53935; /* قرمز - تماس با ما */
+}
+
+.floating-buttons.left a:nth-child(1) {
+  background-color: #25D366; /* سبز - واتساپ */
+}
+
+/* نسخه موبایل */
+@media (max-width: 768px) {
+  .floating-buttons {
+    gap: 8px;
+  }
+
+  .floating-buttons a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .floating-buttons a i {
+    font-size: 16px;
+    margin-left: 6px;
   }
 }
