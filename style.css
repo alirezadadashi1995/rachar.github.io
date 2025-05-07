@@ -896,16 +896,19 @@ iframe.visible {
   gap: 10px;
 }
 
+/* دکمه‌های سمت راست پایین صفحه */
 .floating-buttons.right {
   bottom: 20px;
   right: 20px;
 }
 
+/* دکمه‌های سمت چپ پایین صفحه */
 .floating-buttons.left {
   bottom: 20px;
   left: 20px;
 }
 
+/* استایل کلی برای همه دکمه‌ها */
 .floating-buttons a {
   display: flex;
   align-items: center;
@@ -917,6 +920,7 @@ iframe.visible {
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
+  animation: blink 1.5s infinite;
 }
 
 .floating-buttons a i {
@@ -924,29 +928,34 @@ iframe.visible {
   font-size: 18px;
 }
 
-/* رنگ‌ها و حالت‌ها */
-.floating-buttons a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
-}
-
-.floating-buttons a:nth-child(1) {
-  background-color: #FF8C00; /* نارنجی - ثبت تعمیری یا واتساپ */
+/* رنگ‌ها برای دکمه‌ها به‌ترتیب */
+.floating-buttons.right a:nth-child(1) {
+  background-color: #FF8C00; /* نارنجی - ثبت تعمیری */
 }
 
 .floating-buttons.right a:nth-child(2) {
   background-color: #FFD700; /* زرد - سفارش کالا */
 }
 
-.floating-buttons.left a:nth-child(2) {
-  background-color: #E53935; /* قرمز - تماس با ما */
-}
-
 .floating-buttons.left a:nth-child(1) {
   background-color: #25D366; /* سبز - واتساپ */
 }
 
-/* نسخه موبایل */
+.floating-buttons.left a:nth-child(2) {
+  background-color: #E53935; /* قرمز - تماس با ما */
+}
+
+/* انیمیشن چشمک‌زن */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* حالت‌ها برای موبایل */
 @media (max-width: 768px) {
   .floating-buttons {
     gap: 8px;
@@ -962,3 +971,4 @@ iframe.visible {
     margin-left: 6px;
   }
 }
+
