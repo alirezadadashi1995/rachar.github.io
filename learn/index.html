@@ -323,6 +323,45 @@
             });
         });
     </script>
+
+  
+    <script>
+        // انیمیشن اسکرول برای بخش‌ها
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const iframe = document.querySelector("iframe");
+            const footer = document.querySelector("footer");
+
+            const checkVisibility = () => {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionBottom = section.getBoundingClientRect().bottom;
+
+                    if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                        section.classList.add("visible");
+                    }
+                });
+
+                const iframeTop = iframe.getBoundingClientRect().top;
+                const iframeBottom = iframe.getBoundingClientRect().bottom;
+
+                if (iframeTop < window.innerHeight && iframeBottom > 0) {
+                    iframe.classList.add("visible");
+                }
+
+                const footerTop = footer.getBoundingClientRect().top;
+
+                if (footerTop < window.innerHeight) {
+                    footer.classList.add("visible");
+                }
+            };
+
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility(); // بررسی اولیه
+        });
+      
+    </script>
+  
           <!-- آیکون پشتیبانی واتساپ -->
     <div class="whatsapp-support">
       <a href="https://wa.me/989123213854" target="_blank" rel="noopener noreferrer">
