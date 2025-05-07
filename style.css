@@ -1000,3 +1000,29 @@ iframe.visible {
         margin-left: 6px;
     }
 }
+/* نسخه موبایل */
+@media (min-width: 769px) {
+    .floating-buttons {
+        gap: 10px;
+    }
+    
+    .floating-buttons.right {
+        bottom: 20px;
+        right: 15px;
+    }
+    
+    .floating-buttons.left {
+        bottom: 20px;
+        left: 15px;
+    }
+    
+    .floating-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .floating-btn i {
+        font-size: 16px;
+        margin-left: 6px;
+    }
+}
