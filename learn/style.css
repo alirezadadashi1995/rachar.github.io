@@ -195,18 +195,24 @@ footer p {
     transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
 }
 
-/* استایل پایه برای عناصر متحرک */
+/* انیمیشن اسکرول برای بخش‌ها */
 section, iframe, footer {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* حالت visible */
 section.visible, iframe.visible, footer.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* تأخیرهای مختلف برای انیمیشن‌ها */
+section:nth-child(1).visible { transition-delay: 0.1s; }
+section:nth-child(2).visible { transition-delay: 0.2s; }
+section:nth-child(3).visible { transition-delay: 0.3s; }
+section:nth-child(4).visible { transition-delay: 0.4s; }
+section:nth-child(5).visible { transition-delay: 0.5s; }
 
 section {
     padding: 20px;
