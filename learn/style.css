@@ -671,62 +671,63 @@ iframe.visible {
   }
 }
 
-/* استایل دکمه بازگشت به خانه */
-.home-button {
+/* دکمه بازگشت به صفحه اصلی - قرینه دکمه واتساپ */
+.home-support {
     position: fixed;
-    bottom: 80px;
-    left: 20px;
-    z-index: 999;
-    animation: fadeIn 0.5s ease-in-out;
+    bottom: 20px;
+    left: 20px; /* قرینه سمت راست */
+    z-index: 9999;
+    animation: pulse 2s infinite;
 }
 
-.home-link {
+.home-support a {
     display: flex;
     align-items: center;
-    background: #FFA500;
-    color: #000;
+    background: #FF8C00; /* نارنجی تیره‌تر */
+    color: white;
     padding: 10px 15px;
-    border-radius: 30px;
-    text-decoration: none;
+    border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    flex-direction: row-reverse; /* معکوس برای رعایت راست‌چین */
+    text-decoration: none;
 }
 
-.home-link:hover {
-    background: #FF8C00;
-    transform: translateY(-3px);
+.home-support a:hover {
+    background: #FF7000;
+    transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.home-link i {
+.home-support i {
     font-size: 1.2em;
-    margin-left: 8px;
+    margin-right: 10px; /* فاصله بین آیکون و متن */
 }
 
-.home-text {
-    font-weight: bold;
-}
-
-/* انیمیشن ظاهر شدن */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* انیمیشن پالس یکسان با دکمه واتساپ */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* حالت موبایل */
 @media (max-width: 768px) {
-    .home-button {
-        bottom: 70px;
+    .home-support {
+        bottom: 15px;
         left: 15px;
     }
     
-    .home-link {
+    .home-support a {
         padding: 8px 12px;
-        font-size: 0.9em;
     }
     
-    .home-link i {
+    .home-support i {
         font-size: 1em;
-        margin-left: 5px;
+        margin-right: 8px;
+    }
+    
+    .support-text {
+        font-size: 0.8em;
     }
 }
