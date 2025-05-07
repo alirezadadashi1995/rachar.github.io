@@ -520,6 +520,56 @@ footer p {
     }
 }
 
+/* استایل اصلی آیکون پشتیبانی */
+.whatsapp-support {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* تغییر از left به right برای سمت راست */
+    z-index: 9999;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-support a {
+    display: flex;
+    align-items: center;
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-support a:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px; /* فاصله بین آیکون و متن */
+}
+
+.support-text {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* انیمیشن پالس برای جلب توجه */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 @media (max-width: 768px) {
     .article-header {
         flex-direction: column;
