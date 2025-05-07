@@ -653,10 +653,9 @@ iframe.visible {
         width: auto; /* جلوگیری از کشیده شدن */
     }
     
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-        margin-left: 0; /* حذف margin اضافه */
+    .whatsapp-support i {
+  font-size: 1.2em;
+    margin-right: 10px; /* فاصله بین آیکون و متن */
     }
     
     .support-text {
