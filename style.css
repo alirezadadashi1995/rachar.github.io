@@ -38,113 +38,7 @@ header p {
     transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
 }
 
-.main-nav {
-    margin-top: 0; /* حذف فاصله بالا */
-    background: #FFA500; /* نارنجی */
-    position: fixed; /* ثابت کردن موقعیت */
-    top: 0; /* قرار دادن در بالای صفحه */
-    left: 0; /* قرار دادن در سمت چپ صفحه */
-    width: 100%; /* عرض کامل صفحه */
-    z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
 
-
-.main-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.main-nav ul li {
-    margin: 0 15px;
-}
-
-/* آیکون‌های فونت-آوسام */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
-.main-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.main-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-}
-
-.main-nav ul li a i {
-    font-size: 1.2em;
-}
-
-/* رنگ‌های متفاوت برای هر دکمه */
-/* رنگ‌های متعادل، شاد و نه‌چندان تیره */
-.main-nav ul li:nth-child(1) a {
-    background: linear-gradient(135deg, #E63946, #FF6B6B); /* قرمز شاد ملایم */
-    color: white;
-}
-
-.main-nav ul li:nth-child(2) a {
-    background: linear-gradient(135deg, #2A9D8F, #52B69A); /* سبز-آبی متعادل */
-    color: white;
-}
-
-.main-nav ul li:nth-child(3) a {
-    background: linear-gradient(135deg, #F4A261, #FFB566); /* نارنجی-هلویی ملایم */
-    color: white;
-}
-
-.main-nav ul li:nth-child(4) a {
-    background: linear-gradient(135deg, #457B9D, #5FA8D3); /* آبی آرام ولی واضح */
-    color: white;
-}
-
-.main-nav ul li:nth-child(5) a {
-    background: linear-gradient(135deg, #6A4C93, #9D73C6); /* بنفش ملایم و متفاوت */
-    color: white;
-}
-
-.main-nav ul li a:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-
-/* دکمه بستن منو */
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 1001;
-  cursor: pointer;
-  display: none; /* پیش‌فرض: پنهان */
-}
-
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #fff; /* سفید */
-}
 
 section {
     padding: 20px;
@@ -282,7 +176,7 @@ iframe.visible {
 .slide {
   display: none;
   width: 100%;
-  height: 350px;
+  height: 385px;
   align-items: center;
   justify-content: center;
 }
@@ -764,67 +658,6 @@ iframe.visible {
 
 
 
-/* استایل‌های موبایل */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .main-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        background: #FFD700; /* زرد */
-        z-index: 1000;
-        transition: right 0.3s ease;
-    }
-
-    .main-nav.active {
-        display: block;
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding-top: 60px;
-    }
-
-    .main-nav ul li {
-        margin: 15px 0;
-    }
-
-    .main-nav ul li a {
-        color: #000; /* مشکی */
-        font-size: 1.2em;
-    }
-
-    .main-nav ul li a:hover {
-        color: #FFA500; /* نارنجی */
-    }
-    
-    /* پس‌زمینه تاری */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5); /* رنگ تار */
-  z-index: 998;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-
 @media (max-width: 768px) {
     .order-steps {
         flex-direction: column;
@@ -855,36 +688,9 @@ iframe.visible {
         margin: 15px auto;
     }
 }
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .whatsapp-support {
-        bottom: 15px;
-        right: 15px;
-        width: auto; /* عرض خودکار */
-    }
-    
-    .whatsapp-support a {
-        padding: 8px 12px;
-        width: auto; /* جلوگیری از کشیده شدن */
-    }
-    
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-        margin-left: 0; /* حذف margin اضافه */
-    }
-    
-    .support-text {
-        font-size: 0.8em;
-        display: inline; /* نمایش متن در صورت فضای کافی */
-    }
-}
-/* فقط در صفحه‌های کوچک (موبایل) نمایش داده شود */
-@media (max-width: 768px) {
-  .close-btn {
-    display: block;
-  }
-}
+
+
+/* دکمه‌های شناور */
 
 /* دکمه‌های شناور */
 
@@ -922,13 +728,18 @@ iframe.visible {
     justify-content: center;
     padding: 12px 20px;
     border-radius: 50px;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 15px;
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
+}
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
 }
 
 .floating-btn i {
@@ -938,19 +749,19 @@ iframe.visible {
 
 /* رنگ‌بندی دکمه‌ها */
 .floating-buttons.right .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #FF8C00, #FFA500);
+    background: linear-gradient(135deg, #FFA726, #FB8C00); /* نارنجی روشن‌تر */
 }
 
 .floating-buttons.right .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #FFD700, #FFC000);
+    background: linear-gradient(135deg, #FFEE58, #FFD54F); /* زرد روشن‌تر */
 }
 
 .floating-buttons.left .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    background: linear-gradient(135deg, #25D366, #00BFA5); /* سبز واتساپ + تورquoise */
 }
 
 .floating-buttons.left .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #E53935, #C62828);
+    background: linear-gradient(135deg, #EF5350, #D32F2F); /* قرمز روشن‌تر */
 }
 
 /* انیمیشن‌ها */
@@ -1011,3 +822,108 @@ iframe.visible {
     }
 }
 
+
+
+
+/* استایل منوی همبرگری */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+#menu-toggle {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+    transform: rotate(45deg);
+}
+#menu-toggle:checked ~ .menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu-toggle:checked ~ .menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu-toggle:checked ~ .menu-box {
+    visibility: visible;
+    right: 0;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition-duration: .25s;
+}
+.menu-btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu-btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #f8f9fa;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+    z-index: 999;
+    direction: rtl;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'IranSans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+/* نسخه موبایل */
+@media (max-width: 768px) {
+    .menu-box {
+        width: 250px;
+    }
+    
+    .menu-item {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

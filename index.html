@@ -48,31 +48,32 @@
 </head>
 
 <body>
-    <header>
+     <header>
 
         
        <!-- منوی اصلی -->
-        <nav class="main-nav">
-            <button class="close-btn" onclick="toggleMenu()">✖</button>
-            <ul>
-                <li><a href="#repair-services"><i class="icon-tools"></i> درخواست تعمیر</a></li>
-                <li><a href="#product-order"><i class="icon-cart"></i> درخواست کالا</a></li>
-                <li><a href="https://rachar.ir/learn/" target="_blank"><i class="icon-book"></i> مطالب آموزشی</a></li>
-                <li><a href="#payment-receipt"><i class="icon-credit-card"></i> پرداخت و رسید</a></li>
-                <li><a href="#phone-numbers"><i class="icon-phone"></i> تماس با ما</a></li>
-            </ul>
-        </nav>
-        <!-- آیکون منوی ساندویچی -->
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-
-        <!-- Overlay برای بستن منو -->
-        <div class="overlay" onclick="toggleMenu()"></div>
-
         <div style="margin: 2rem 0;"></div> <!-- فاصله نسبی -->
         <h1><strong><b>راچار</b> | تعمیر تخصصی و فروش کالا دیجیتال</strong></h1>
         <p></p><b>پست رایگان و تحویل درب منزل</b></p>
       
     </header>
+
+  <!-- منوی همبرگری -->
+<div class="hamburger-menu">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-btn" for="menu-toggle">
+        <span></span>
+    </label>
+    
+    <ul class="menu-box">
+        <li><a class="menu-item" href="/">صفحه اصلی</a></li>
+        <li><a class="menu-item" href="/products">محصولات</a></li>
+        <li><a class="menu-item" href="/services">خدمات</a></li>
+        <li><a class="menu-item" href="/learn/">مطالب آموزشی</a></li>
+        <li><a class="menu-item" href="/about">درباره ما</a></li>
+        <li><a class="menu-item" href="/contact">تماس با ما</a></li>
+    </ul>
+</div>
   
     <!-- اسلایدر تصاویر -->
 <div class="slider-container">
@@ -360,28 +361,28 @@
 </script>
 
   
-      <!-- دکمه‌های شناور -->
-      <div class="floating-buttons right">
-          <a href="https://forms.gle/wQPy2R4qM4FWVbq68" class="floating-btn">
-              <i class="fas fa-tools"></i>
-              <span>ثبت تعمیر</span>
-          </a>
-          <a href="https://forms.gle/33WXHcfB63bcWcJd6" class="floating-btn">
-              <i class="fas fa-shopping-cart"></i>
-              <span>سفارش کالا</span>
-          </a>
-      </div>
-      
-      <div class="floating-buttons left">
-          <a href="https://wa.me/989123213854" class="floating-btn" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-              <span>پشتیبانی</span>
-          </a>
-          <a href="tel:09123213854" class="floating-btn">
-              <i class="fas fa-phone"></i>
-              <span>تماس با ما</span>
-          </a>
-      </div>
+        <!-- دکمه‌های شناور -->
+        <div class="floating-buttons right">
+            <a href="https://forms.gle/wQPy2R4qM4FWVbq68" class="floating-btn">
+                <i class="fas fa-tools"></i>
+                <span>ثبت تعمیر</span>
+            </a>
+            <a href="https://forms.gle/33WXHcfB63bcWcJd6" class="floating-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span>سفارش کالا</span>
+            </a>
+        </div>
+        
+        <div class="floating-buttons left">
+            <a href="https://wa.me/989123213854" class="floating-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>پشتیبانی</span>
+            </a>
+            <a href="tel:09123213854" class="floating-btn">
+                <i class="fas fa-phone"></i>
+                <span>تماس با ما</span>
+            </a>
+        </div>
   
 </body>
 </html>
