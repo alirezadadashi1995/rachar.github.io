@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>درباره راچار | تعمیرات تخصصی، فروش کالا و آموزش دیجیتال - علیرضا داداشی</title>
+  
+  <!-- متا تگ‌های سئو -->
+  <meta name="description" content="راچار با ۱۰ سال سابقه در تعمیرات تخصصی موبایل و لپ‌تاپ، فروش کالای دیجیتال با قیمت مناسب و تولید محتوای آموزشی. خدمات سیار در تهران با مدیریت علیرضا داداشی">
+  
+  <meta name="keywords" content="درباره راچار, تاریخچه راچار, خدمات راچار, تعمیرات تخصصی موبایل, فروش کالای دیجیتال, آموزش تعمیرات, علیرضا داداشی, تعمیرات در محل تهران">
+  
+  <link rel="canonical" href="https://rachar.ir/about/">
+  
+  <!-- OG Tags -->
+  <meta property="og:title" content="درباره راچار | تعمیرات تخصصی، فروش کالا و آموزش دیجیتال">
+  <meta property="og:description" content="۱۰ سال تجربه در تعمیرات دیجیتال، فروش کالا با قیمت مناسب و تولید محتوای آموزشی تخصصی توسط تیم راچار">
+  <meta property="og:image" content="https://rachar.ir/images/about-banner.jpg">
+  <meta property="og:url" content="https://rachar.ir/about/">
+  <meta property="og:type" content="website">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "درباره راچار",
+    "description": "تاریخچه و خدمات مرکز تخصصی تعمیرات و فروش کالای دیجیتال راچار",
+    "url": "https://rachar.ir/about/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "راچار",
+      "logo": "https://rachar.ir/images/logo.png"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "صفحه اصلی",
+        "item": "https://rachar.ir/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "درباره ما",
+        "item": "https://rachar.ir/about/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts and Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- منوی همبرگری -->
+  <div class="hamburger-menu">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-btn" for="menu-toggle">
+      <span></span>
+    </label>
+    <ul class="menu-box">
+      <li><a class="menu-item" href="/">صفحه اصلی</a></li>
+      <li><a class="menu-item" href="/products">محصولات</a></li>
+      <li><a class="menu-item" href="/services">خدمات</a></li>
+      <li><a class="menu-item" href="/learn/">مطالب آموزشی</a></li>
+      <li><a class="menu-item" href="/about/">درباره ما</a></li>
+      <li><a class="menu-item" href="/contact">تماس با ما</a></li>
+    </ul>
+  </div>
+
+  <!-- بخش هدر -->
+  <header class="about-header">
+    <div class="container">
+      <h1>درباره <span>راچار</span></h1>
+      <nav aria-label="مسیر راهنما">
+        <ol class="breadcrumb">
+          <li><a href="/">صفحه اصلی</a></li>
+          <li>درباره ما</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- محتوای اصلی -->
+  <main class="about-content">
+    <section class="about-section">
+      <div class="container">
+        <div class="about-intro">
+          <h2>تاریخچه راچار</h2>
+          <p>راچار در سال ۱۳۹۲ با هدف ارائه خدمات تخصصی تعمیرات دیجیتال توسط <strong>علیرضا داداشی</strong> تأسیس شد. ما از یک کارگاه کوچک تعمیرات موبایل شروع کردیم و امروز به یکی از معتبرترین مراکز خدمات دیجیتال در تهران تبدیل شده‌ایم.</p>
+          
+          <div class="milestones">
+            <div class="milestone">
+              <div class="year">۱۳۹۲</div>
+              <div class="description">تأسیس راچار با تمرکز بر تعمیرات موبایل</div>
+            </div>
+            <div class="milestone">
+              <div class="year">۱۳۹۵</div>
+              <div class="description">اضافه شدن خدمات تعمیر لپ‌تاپ و کامپیوتر</div>
+            </div>
+            <div class="milestone">
+              <div class="year">۱۳۹۷</div>
+              <div class="description">شروع فعالیت در زمینه فروش کالای دیجیتال</div>
+            </div>
+            <div class="milestone">
+              <div class="year">۱۴۰۰</div>
+              <div class="description">راه‌اندازی بخش آموزش و تولید محتوای تخصصی</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-mission">
+          <h2>ماموریت و چشم‌انداز ما</h2>
+          <p>ماموریت ما ارائه <strong>کیفیت برتر</strong> در سه حوزه اصلی است:</p>
+          <ul class="mission-list">
+            <li>
+              <i class="fas fa-tools"></i>
+              <h3>تعمیرات تخصصی</h3>
+              <p>تعمیرات با کیفیت بالا با استفاده از تجهیزات پیشرفته و قطعات اورجینال</p>
+            </li>
+            <li>
+              <i class="fas fa-shopping-bag"></i>
+              <h3>فروش کالای دیجیتال</h3>
+              <p>ارائه کالاهای باکیفیت با قیمت مناسب و گارانتی معتبر</p>
+            </li>
+            <li>
+              <i class="fas fa-graduation-cap"></i>
+              <h3>آموزش و مشاوره</h3>
+              <p>تولید محتوای آموزشی تخصصی برای افزایش دانش کاربران</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <div class="container">
+        <h2>تیم راچار</h2>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="/images/alireza-dadashi.jpg" alt="علیرضا داداشی - مدیر راچار" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h3>علیرضا داداشی</h3>
+            <p class="position">مؤسس و مدیر راچار</p>
+            <p class="bio">با بیش از ۱۵ سال تجربه در حوزه تعمیرات دیجیتال، ایشان از پیشگامان صنعت تعمیرات تخصصی در ایران هستند. تخصص اصلی ایشان در تعمیرات بردهای الکترونیکی و بازیابی اطلاعات است.</p>
+            <div class="member-contact">
+              <a href="tel:09123213854" class="contact-link">
+                <i class="fas fa-phone"></i> ۰۹۱۲۳۲۱۳۸۵۴
+              </a>
+              <a href="mailto:info@rachar.ir" class="contact-link">
+                <i class="fas fa-envelope"></i> info@rachar.ir
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section">
+      <div class="container">
+        <h2>موقعیت ما</h2>
+        <div class="location-content">
+          <div class="address-card">
+            <h3>دفتر مرکزی راچار</h3>
+            <address>
+              <i class="fas fa-map-marker-alt"></i>
+              تهران، خیابان ولی‌عصر، نرسیده به چهارراه طالقانی، کوچه شهید رحیم‌زاده، پلاک ۱۰
+            </address>
+            <div class="working-hours">
+              <h4>ساعات کاری:</h4>
+              <p>شنبه تا چهارشنبه: ۹ صبح تا ۸ شب</p>
+              <p>پنجشنبه: ۹ صبح تا ۴ بعدازظهر</p>
+              <p>جمعه‌ها تعطیل</p>
+            </div>
+            <a href="tel:09123213854" class="contact-button">
+              <i class="fas fa-phone"></i> تماس با ما
+            </a>
+          </div>
+          <div class="map-container">
+            <iframe 
+              src="https://neshan.org/maps/iframe/places/_bvPZiGxickq#c35.705-51.407-21z-0p/35.70541049015142/51.40732709169151" 
+              width="100%" 
+              height="400" 
+              allowfullscreen 
+              loading="lazy"
+              title="نقشه محل دفتر راچار">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- فوتر -->
+  <footer class="about-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="/images/logo.png" alt="لوگوی راچار" loading="lazy">
+          <p>راچار - تعمیرات تخصصی و فروش کالای دیجیتال</p>
+        </div>
+        <div class="footer-links">
+          <h3>لینک‌های سریع</h3>
+          <ul>
+            <li><a href="/services">خدمات تعمیرات</a></li>
+            <li><a href="/products">محصولات</a></li>
+            <li><a href="/learn/">آموزش‌ها</a></li>
+            <li><a href="/contact">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>ارتباط با راچار</h3>
+          <ul>
+            <li><i class="fas fa-phone"></i> <a href="tel:09123213854">۰۹۱۲۳۲۱۳۸۵۴</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/989123213854">واتساپ</a></li>
+            <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/rachar.ir">اینستاگرام</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@rachar.ir">info@rachar.ir</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>تمامی حقوق مادی و معنوی این سایت متعلق به <strong>مرکز تعمیرات راچار</strong> می‌باشد. © ۱۴۰۲</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- اسکریپت‌ها -->
+  <script src="script.js"></script>
+</body>
+</html>
