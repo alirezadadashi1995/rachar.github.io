@@ -1,27 +1,169 @@
-/* فونت‌ها و تنظیمات پایه */
-@font-face {
-  font-family: 'Vazir';
-  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  text-align: right;
-  direction: rtl;
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
 }
 
+header {
+    background: #FFA500; /* نارنجی */
+    color: #000; /* مشکی */
+    padding: 40px 20px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+.logo {
+    width: 150px; /* اندازه‌ی لوگو */
+    height: auto;
+    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
+}
+
+
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #000; /* مشکی */
+    border-bottom: 2px solid #FFA500;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #000; /* مشکی */
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+a {
+    color: #FFA500; /* نارنجی */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background: #FFD700; /* زرد */
+    color: #000; /* مشکی */
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
+    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+}
+
+.phone-button {
+    display: inline-block;
+    background: #FFD700; /* زرد */
+    color: #000; /* مشکی */
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.phone-button:hover {
+    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
+    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+}
+
+footer {
+    background: #FFA500; /*4CAF50 سبز */
+    color: #000;
+    padding: 20px;
+    margin-top: 20px;
+    transform: translateY(100%);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+footer.visible {
+    transform: translateY(0);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.social-icon {
+    width: 85px; /* اندازه آیکون */
+    height: auto;
+    margin: 0 10px; /* فاصله بین آیکون‌ها */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+iframe.visible {
+    opacity: 1;
+    transform: scale(1);
+}
 .container {
   width: 90%;
   max-width: 1200px;
