@@ -1,1 +1,616 @@
+/* Reset و تنظیمات پایه */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: right;
+  direction: rtl;
+}
+
+/* استایل هدر */
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+#menu-toggle {
+  opacity: 0;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition-duration: .25s;
+}
+
+.menu-btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu-btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu-box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #FFA500;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  transition-duration: .25s;
+  z-index: 999;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 24px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menu-item:hover {
+  background-color: #FFD700;
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  left: 0;
+}
+
+.payment-hero {
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  color: #000;
+  padding: 80px 20px 60px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.payment-hero p {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* محتوای اصلی */
+.payment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 30px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #000;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #FFA500;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 100px;
+  height: 2px;
+  background: #FFD700;
+}
+
+h3 {
+  color: #000;
+  font-size: 1.5rem;
+  margin: 25px 0 15px;
+}
+
+/* کارت پرداخت */
+.payment-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 30px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.bank-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  transition: all 0.3s;
+}
+
+.bank-card:hover {
+  border-color: #FFD700;
+}
+
+.bank-details {
+  flex: 1;
+  text-align: right;
+}
+
+.bank-label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.bank-value {
+  font-family: 'Vazir', monospace;
+  font-size: 1.2rem;
+  color: #000;
+  word-break: break-all;
+}
+
+.copy-button {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Vazir';
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+.copy-button:hover {
+  background: #FFA500;
+  transform: scale(1.05);
+}
+
+.copy-button.copied {
+  background: #4CAF50;
+  color: white;
+}
+
+.bank-notice {
+  background: #FFF8E1;
+  padding: 15px;
+  border-radius: 8px;
+  border-right: 4px solid #FFD700;
+  font-size: 0.95rem;
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+}
+
+.bank-notice i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #FFA500;
+}
+
+/* دکمه واتساپ */
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: all 0.3s;
+}
+
+.whatsapp-button i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.whatsapp-button:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+}
+
+/* مراحل پرداخت */
+.payment-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.payment-step {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.3s;
+  border-top: 3px solid #FFA500;
+}
+
+.payment-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.payment-step-number {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #FFA500;
+  color: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.payment-step h3 {
+  font-size: 1.2rem;
+  margin: 15px 0 10px;
+  color: #000;
+}
+
+.payment-step p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* فوتر */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 0 20px 30px;
+}
+
+.footer-section h3 {
+  color: #FFA500;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-section p i {
+  margin-left: 8px;
+  color: #FFD700;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.footer-section ul li a:hover {
+  color: #FFA500;
+  padding-right: 5px;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  color: #FFA500;
+  border-radius: 50%;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+  background: #FFA500;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.footer-bottom .logo {
+  width: 120px;
+  height: auto;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* دکمه‌های شناور */
+.floating-buttons {
+  position: fixed;
+  z-index: 999;
+}
+
+.floating-buttons.right {
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-buttons.left {
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  background: #FFA500;
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.floating-btn i {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+.floating-btn:hover {
+  background: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .payment-hero {
+    padding: 70px 20px 40px;
+  }
+  
+  .payment-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .payment-hero p {
+    font-size: 1rem;
+  }
+  
+  .payment-steps {
+    flex-direction: column;
+  }
+  
+  .payment-step {
+    width: 100%;
+  }
+  
+  .bank-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .copy-button {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: 30px;
+  }
+  
+  .floating-buttons.right,
+  .floating-buttons.left {
+    flex-direction: row;
+  }
+  
+  .floating-buttons.right {
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .floating-buttons.left {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .floating-btn {
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .floating-btn span {
+    display: none;
+  }
+  
+  .floating-btn i {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-hero {
+    padding: 60px 15px 30px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  .payment-card {
+    padding: 20px 15px;
+  }
+  
+  .bank-value {
+    font-size: 1rem;
+  }
+}
