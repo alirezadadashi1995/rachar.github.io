@@ -365,10 +365,11 @@ iframe.visible {
 
 /* دکمه ثبت سفارش کالا */
 .order-button {
+    height: auto; 
     display: inline-block;
     background: linear-gradient(135deg, #4ECDC4, #88DAC7);
     color: white;
-    padding: 30px 10px;
+    padding: 20px 10px;
     border-radius: 50px;
     text-decoration: none;
     font-size: 1.3em;
@@ -500,10 +501,11 @@ iframe.visible {
 
 /* دکمه ثبت درخواست تعمیر */
 .repair-button {
+    height: auto; 
     display: inline-block;
     background: linear-gradient(135deg, #FF8C00, #FFA500); /* نارنجی */
     color: white;
-    padding: 30px 10px;
+    padding: 20px 10px;
     border-radius: 50px;
     text-decoration: none;
     font-size: 1.3em;
