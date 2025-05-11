@@ -927,3 +927,31 @@ iframe.visible {
         padding: 10px 20px;
     }
 }
+
+
+
+
+/* دکمه یادگیری بالای صفحه*/
+
+.learn-button {
+  display: inline-block;
+  background-color: #FF8C00;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #FF8C00;
+}
+
+.learn-button:hover {
+  background-color: transparent;
+  color: #FF8C00;
+  text-decoration: none;
+}
+
+strong {
+  color: #FF8C00;
+}
