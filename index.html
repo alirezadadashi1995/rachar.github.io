@@ -268,49 +268,38 @@
         });
 
         // انیمیشن اسکرول برای بخش‌ها
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    const iframe = document.querySelector("iframe");
-    const footer = document.querySelector("footer");
-    const extraElements = document.querySelectorAll(".step, .button, .learn-button, .payment-button");
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const iframe = document.querySelector("iframe");
+            const footer = document.querySelector("footer");
 
-    const checkVisibility = () => {
-        // برای سکشن‌ها
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                section.classList.add("visible");
-            }
+            const checkVisibility = () => {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionBottom = section.getBoundingClientRect().bottom;
+
+                    if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                        section.classList.add("visible");
+                    }
+                });
+
+                const iframeTop = iframe.getBoundingClientRect().top;
+                const iframeBottom = iframe.getBoundingClientRect().bottom;
+
+                if (iframeTop < window.innerHeight && iframeBottom > 0) {
+                    iframe.classList.add("visible");
+                }
+
+                const footerTop = footer.getBoundingClientRect().top;
+
+                if (footerTop < window.innerHeight) {
+                    footer.classList.add("visible");
+                }
+            };
+
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility(); // بررسی اولیه
         });
-
-        // برای iframe
-        if (iframe) {
-            const rect = iframe.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                iframe.classList.add("visible");
-            }
-        }
-
-        // برای footer
-        if (footer && footer.getBoundingClientRect().top < window.innerHeight) {
-            footer.classList.add("visible");
-        }
-
-        // سایر عناصر مانند دکمه‌ها
-        extraElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                el.classList.add("visible");
-            }
-        });
-    };
-
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // بررسی اولیه هنگام لود صفحه
-});
-</script>
-
 
 
       
