@@ -1,19 +1,18 @@
-/* فونت‌ها و تنظیمات پایه */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+/* Fonts and Base Styles */
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
 
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --accent-color: #e74c3c;
-  --light-color: #ecf0f1;
-  --dark-color: #2c3e50;
-  --success-color: #27ae60;
-  --warning-color: #f39c12;
-  --text-color: #333;
-  --text-light: #7f8c8d;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --primary-color: #FF6B00; /* رنگ سازمانی نارنجی */
+  --primary-dark: #E05D00;
+  --primary-light: #FF8C33;
+  --secondary-color: #333333;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #28a745;
+  --text-color: #444;
+  --border-radius: 8px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -23,39 +22,30 @@
 }
 
 body {
-  font-family: Vazir, sans-serif;
+  font-family: Vazir, Tahoma, Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #f5f7fa;
+  background-color: #f5f5f5;
   direction: rtl;
+  text-align: right;
 }
 
-/* هدر و منوی همبرگری */
+/* Header Styles */
 header {
-  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: relative;
   overflow: hidden;
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
-  background-size: 40px 40px;
-  opacity: 0.3;
-}
-
 .payment-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   text-align: center;
-  padding: 3rem 1rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .payment-hero h1 {
@@ -71,12 +61,12 @@ header::before {
   opacity: 0;
 }
 
-/* منوی همبرگری */
+/* Hamburger Menu Styles */
 .hamburger-menu {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 #menu-toggle {
@@ -87,71 +77,68 @@ header::before {
 .menu-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  backdrop-filter: blur(5px);
-  transition: var(--transition);
+  z-index: 1;
 }
 
-.menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
   display: block;
   position: absolute;
-  width: 25px;
-  height: 2px;
+  width: 100%;
+  height: 3px;
   background-color: white;
   transition: var(--transition);
 }
 
-.menu-btn span::before {
+.menu-btn > span::before {
   content: '';
   top: -8px;
 }
 
-.menu-btn span::after {
+.menu-btn > span::after {
   content: '';
   top: 8px;
 }
 
-#menu-toggle:checked + .menu-btn span {
+#menu-toggle:checked ~ .menu-btn > span {
   transform: rotate(45deg);
 }
 
-#menu-toggle:checked + .menu-btn span::before {
+#menu-toggle:checked ~ .menu-btn > span::before {
   top: 0;
   transform: rotate(0);
 }
 
-#menu-toggle:checked + .menu-btn span::after {
+#menu-toggle:checked ~ .menu-btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
 
 #menu-toggle:checked ~ .menu-box {
-  transform: translateX(0);
+  visibility: visible;
+  right: 0;
 }
 
 .menu-box {
+  display: block;
   position: fixed;
+  visibility: hidden;
   top: 0;
   right: -100%;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 80px 0;
-  background-color: var(--primary-color);
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease;
-  z-index: 999;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  z-index: 99;
 }
 
 .menu-item {
@@ -161,31 +148,29 @@ header::before {
   font-size: 1.1rem;
   text-decoration: none;
   transition: var(--transition);
-  border-right: 3px solid transparent;
 }
 
 .menu-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-right: 3px solid var(--secondary-color);
-  padding-right: 30px;
+  background-color: var(--primary-color);
+  color: white;
 }
 
-/* محتوای اصلی */
+/* Main Content Styles */
 .payment-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 0 20px;
 }
 
 section {
-  margin-bottom: 3rem;
-  padding: 2rem;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: var(--transition);
 }
 
 section.visible {
@@ -196,9 +181,9 @@ section.visible {
 h2 {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
+  font-size: 1.8rem;
   position: relative;
   padding-bottom: 10px;
-  font-size: 1.8rem;
 }
 
 h2::after {
@@ -206,150 +191,112 @@ h2::after {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 80px;
+  width: 60px;
   height: 3px;
-  background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
+  background-color: var(--primary-color);
 }
 
 h3 {
-  color: var(--dark-color);
+  color: var(--secondary-color);
   margin: 1rem 0;
   font-size: 1.4rem;
 }
 
-/* مراحل پرداخت */
+/* Payment Steps Styles */
 .payment-steps {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 1.5rem;
-  justify-content: center;
   margin: 2rem 0;
 }
 
 .payment-step {
   flex: 1;
   min-width: 250px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  border-radius: 10px;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
   padding: 1.5rem;
-  box-shadow: var(--shadow);
+  text-align: center;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .payment-step:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.payment-step::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .payment-step-number {
   width: 40px;
   height: 40px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  margin: 0 auto 1rem;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-  transition: var(--transition);
 }
 
-.payment-step:hover .payment-step-number {
-  background-color: var(--accent-color);
-  transform: scale(1.1);
-}
-
-/* کارت بانکی */
-.payment-card {
-  background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  position: relative;
+/* Bank Info Styles */
+.payment-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: var(--border-radius);
+  padding: 0;
   overflow: hidden;
 }
 
-.payment-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-  animation: rotate 15s linear infinite;
-}
-
 .bank-info {
-  position: relative;
-  z-index: 1;
+  padding: 2rem;
 }
 
 .bank-card {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 1.5rem;
   margin: 1.5rem 0;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  box-shadow: var(--box-shadow);
   transition: var(--transition);
-  border-right: 4px solid var(--secondary-color);
+  border-right: 4px solid var(--primary-color);
 }
 
 .bank-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.bank-details {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1rem;
+  transform: translateX(-5px);
 }
 
 .bank-label {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
 }
 
 .bank-value {
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 1.1rem;
-  color: var(--text-color);
-  word-break: break-all;
+  color: var(--dark-color);
+  word-spacing: 5px;
 }
 
 .copy-button {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  font-family: Vazir, sans-serif;
+  font-family: Vazir;
+  margin-top: 1rem;
   transition: var(--transition);
-  align-self: flex-start;
+  display: inline-block;
 }
 
 .copy-button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--primary-dark);
 }
 
 .copy-button.copied {
@@ -358,51 +305,80 @@ h3 {
 }
 
 .bank-notice {
-  background-color: rgba(52, 152, 219, 0.1);
-  border-right: 4px solid var(--secondary-color);
+  background-color: #fff8e1;
+  border-right: 4px solid #ffc107;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   margin: 1.5rem 0;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .bank-notice i {
-  color: var(--secondary-color);
+  color: #ff9800;
+  margin-left: 10px;
   font-size: 1.2rem;
 }
 
-/* دکمه واتساپ */
+/* WhatsApp Button Styles */
 .whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  display: inline-block;
   background-color: #25D366;
   color: white;
   padding: 0.8rem 1.5rem;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: bold;
   margin-top: 1rem;
   transition: var(--transition);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-button i {
+  margin-left: 8px;
 }
 
 .whatsapp-button:hover {
   background-color: #128C7E;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
 }
 
-.whatsapp-button i {
-  font-size: 1.2rem;
+/* Service Benefits Styles */
+.service-benefits ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* فوتر */
+.service-benefits li {
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #eee;
+  position: relative;
+  padding-right: 30px;
+  transition: var(--transition);
+}
+
+.service-benefits li:hover {
+  padding-right: 40px;
+  color: var(--primary-color);
+}
+
+.service-benefits li::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+}
+
+/* Footer Styles */
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: white;
   padding: 3rem 0 0;
 }
@@ -410,9 +386,10 @@ footer {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2rem;
 }
 
@@ -424,6 +401,7 @@ footer {
 .footer-section h3 {
   color: white;
   margin-bottom: 1.5rem;
+  font-size: 1.4rem;
   position: relative;
   padding-bottom: 10px;
 }
@@ -433,47 +411,49 @@ footer {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 50px;
-  height: 2px;
-  background-color: var(--secondary-color);
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
 }
 
 .footer-section p, .footer-section a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ddd;
   margin-bottom: 0.8rem;
   display: block;
   transition: var(--transition);
 }
 
 .footer-section a:hover {
-  color: white;
+  color: var(--primary-color);
   padding-right: 5px;
 }
 
 .footer-section i {
   margin-left: 8px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .social-icons {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
+  margin-top: 1rem;
 }
 
 .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  font-size: 1.2rem;
   transition: var(--transition);
 }
 
 .social-icons a:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: translateY(-3px);
 }
 
@@ -483,7 +463,7 @@ footer {
   text-align: center;
   margin-top: 2rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #aaa;
 }
 
 .footer-bottom p {
@@ -491,25 +471,20 @@ footer {
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
   margin-top: 1rem;
-  filter: brightness(0) invert(1);
   opacity: 0.8;
   transition: var(--transition);
 }
 
 .logo:hover {
   opacity: 1;
-  transform: scale(1.05);
 }
 
-/* دکمه‌های شناور */
+/* Floating Buttons */
 .floating-buttons {
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 999;
+  z-index: 99;
 }
 
 .floating-buttons.right {
@@ -525,50 +500,47 @@ footer {
 .floating-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
-  position: relative;
-  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: floatUp 0.5s ease forwards;
+}
+
+.floating-btn:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.floating-btn:nth-child(2) {
+  animation-delay: 0.6s;
 }
 
 .floating-btn:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary-dark);
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .floating-btn i {
   font-size: 1.2rem;
+  margin-left: 8px;
 }
 
 .floating-btn span {
-  position: absolute;
-  right: 60px;
-  white-space: nowrap;
-  background-color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  opacity: 0;
-  transition: var(--transition);
-  pointer-events: none;
-  box-shadow: var(--shadow);
+  font-size: 0.9rem;
 }
 
-.floating-btn:hover span {
-  opacity: 1;
-  right: 70px;
-}
-
-/* انیمیشن‌ها */
+/* Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -579,7 +551,7 @@ footer {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -592,30 +564,24 @@ footer {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes floatUp {
   to {
-    transform: rotate(360deg);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* رسپانسیو */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .payment-hero h1 {
     font-size: 2rem;
-  }
-  
-  .payment-hero p {
-    font-size: 1rem;
   }
   
   .payment-steps {
@@ -623,11 +589,16 @@ footer {
   }
   
   .payment-step {
-    min-width: 100%;
+    width: 100%;
+  }
+  
+  .footer-content {
+    flex-direction: column;
   }
   
   .floating-buttons {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
   }
   
   .floating-buttons.right {
@@ -640,7 +611,25 @@ footer {
     bottom: 10px;
   }
   
-  .floating-btn span {
-    display: none;
+  .floating-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bank-value {
+    font-size: 0.9rem;
+    word-spacing: normal;
+  }
+  
+  .copy-button {
+    width: 100%;
+  }
+  
+  .whatsapp-button {
+    width: 100%;
+    text-align: center;
   }
 }
