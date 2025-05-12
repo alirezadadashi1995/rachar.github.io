@@ -931,11 +931,6 @@ iframe.visible {
     margin-left: 6px;
     font-size: 0.9rem;
   }
-  
-  .learn-button {
-    animation: none; /* غیرفعال کردن انیمیشن پالس در موبایل */
-  }
-}
 
 
 /* دکمه پرداخت */
