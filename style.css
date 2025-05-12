@@ -951,8 +951,16 @@ iframe.visible {
   font-size: 1.1rem;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
+    
+.payment-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
 .payment-button i {
   margin-left: 8px;
   font-size: 1.2rem;
