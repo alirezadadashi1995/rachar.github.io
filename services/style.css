@@ -6,26 +6,66 @@
   font-family: Vazir, sans-serif;
 }
 
+:root {
+  --primary-blue: #1e3c72;
+  --secondary-blue: #2a5298;
+  --primary-orange: #ff7b25;
+  --secondary-orange: #ff5e00;
+  --light-orange: #ffd8b8;
+  --dark-text: #333;
+  --medium-text: #555;
+  --light-text: #777;
+  --light-bg: #f5f7fa;
+  --white: #fff;
+}
+
 body {
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
   line-height: 1.6;
+  position: relative;
 }
 
 /* هدر صفحه */
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
   margin-bottom: 2rem;
   border-radius: 0 0 15px 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-orange);
 }
 
 header h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
 }
 
 header p {
@@ -44,17 +84,25 @@ header p {
 .services-intro {
   margin-bottom: 3rem;
   text-align: center;
+  position: relative;
 }
 
 .services-intro h2 {
   margin-bottom: 1.5rem;
-  color: #2a5298;
+  color: var(--secondary-blue);
   font-size: 1.5rem;
+  display: inline-block;
+  position: relative;
+}
+
+.services-intro h2 i {
+  margin-left: 0.5rem;
+  color: var(--primary-orange);
 }
 
 .services-intro p {
   margin-bottom: 2rem;
-  color: #555;
+  color: var(--medium-text);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -68,12 +116,13 @@ header p {
 }
 
 .highlight-card {
-  background: white;
+  background: var(--white);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 3px solid var(--primary-orange);
 }
 
 .highlight-card:hover {
@@ -83,17 +132,17 @@ header p {
 
 .highlight-card i {
   font-size: 2.5rem;
-  color: #2a5298;
+  color: var(--secondary-blue);
   margin-bottom: 1rem;
 }
 
 .highlight-card h3 {
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--dark-text);
 }
 
 .highlight-card p {
-  color: #666;
+  color: var(--light-text);
   font-size: 0.9rem;
 }
 
@@ -103,6 +152,7 @@ header p {
 .computer-repair,
 .product-sales {
   margin-bottom: 3rem;
+  padding-top: 1rem;
 }
 
 .mobile-repair h2,
@@ -111,8 +161,34 @@ header p {
 .product-sales h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2a5298;
+  color: var(--secondary-blue);
   font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.mobile-repair h2::after,
+.laptop-repair h2::after,
+.computer-repair h2::after,
+.product-sales h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
+}
+
+.mobile-repair h2 i,
+.laptop-repair h2 i,
+.computer-repair h2 i,
+.product-sales h2 i {
+  color: var(--primary-orange);
+  margin-left: 0.5rem;
 }
 
 .mobile-repair p,
@@ -121,7 +197,7 @@ header p {
 .product-sales p {
   text-align: center;
   margin-bottom: 2rem;
-  color: #555;
+  color: var(--medium-text);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -137,11 +213,12 @@ header p {
 
 .service-card,
 .product-card {
-  background: white;
+  background: var(--white);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 3px solid var(--primary-orange);
 }
 
 .service-card:hover,
@@ -161,13 +238,13 @@ header p {
 .service-card h3,
 .product-card h3 {
   padding: 1rem 1rem 0.5rem;
-  color: #333;
+  color: var(--dark-text);
 }
 
 .service-card p,
 .product-card p {
   padding: 0 1rem;
-  color: #666;
+  color: var(--light-text);
   font-size: 0.9rem;
 }
 
@@ -180,12 +257,12 @@ header p {
   margin-bottom: 0.5rem;
   position: relative;
   padding-right: 1.2rem;
-  color: #555;
+  color: var(--medium-text);
 }
 
 .service-card ul li:before {
   content: "•";
-  color: #2a5298;
+  color: var(--primary-orange);
   position: absolute;
   right: 0;
 }
@@ -196,35 +273,56 @@ header p {
   text-align: center;
   padding: 0.8rem;
   margin: 1rem;
-  background: #2a5298;
-  color: white;
+  background: var(--secondary-blue);
+  color: var(--white);
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  font-weight: bold;
 }
 
 .service-btn:hover,
 .product-btn:hover {
-  background: #1e3c72;
+  background: var(--primary-blue);
+  transform: translateY(-2px);
 }
 
 /* فرآیند خدمات */
 .service-process {
   margin-bottom: 3rem;
+  padding: 2rem 0;
 }
 
 .service-process h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #2a5298;
+  color: var(--secondary-blue);
   font-size: 1.5rem;
+  position: relative;
+}
+
+.service-process h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
+}
+
+.service-process h2 i {
+  color: var(--primary-orange);
+  margin-left: 0.5rem;
 }
 
 .process-steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -232,12 +330,13 @@ header p {
   flex: 1;
   min-width: 150px;
   max-width: 200px;
-  background: white;
+  background: var(--white);
   padding: 1.5rem 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
   transition: transform 0.3s;
+  border-top: 3px solid var(--primary-orange);
 }
 
 .process-step:hover {
@@ -247,8 +346,8 @@ header p {
 .step-number {
   width: 40px;
   height: 40px;
-  background: #2a5298;
-  color: white;
+  background: var(--secondary-blue);
+  color: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -259,29 +358,48 @@ header p {
 
 .process-step h3 {
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--dark-text);
   font-size: 1rem;
 }
 
 .process-step p {
-  color: #666;
+  color: var(--light-text);
   font-size: 0.8rem;
 }
 
 /* ضمانت خدمات */
 .service-guarantee {
   margin-bottom: 3rem;
-  background: white;
+  background: var(--white);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-top: 3px solid var(--primary-orange);
 }
 
 .service-guarantee h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2a5298;
+  color: var(--secondary-blue);
   font-size: 1.5rem;
+  position: relative;
+}
+
+.service-guarantee h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
+}
+
+.service-guarantee h2 i {
+  color: var(--primary-orange);
+  margin-left: 0.5rem;
 }
 
 .guarantee-content {
@@ -298,7 +416,7 @@ header p {
 
 .guarantee-text p {
   margin-bottom: 1rem;
-  color: #555;
+  color: var(--medium-text);
 }
 
 .guarantee-text ul {
@@ -310,12 +428,12 @@ header p {
   margin-bottom: 0.5rem;
   position: relative;
   padding-right: 1.2rem;
-  color: #555;
+  color: var(--medium-text);
 }
 
 .guarantee-text ul li:before {
   content: "•";
-  color: #2a5298;
+  color: var(--primary-orange);
   position: absolute;
   right: 0;
 }
@@ -330,21 +448,39 @@ header p {
   max-width: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--light-orange);
 }
 
 /* خدمات اورژانسی */
 .emergency-service {
-  background: linear-gradient(135deg, #ff4d4d 0%, #cc0000 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+  color: var(--white);
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 3rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--secondary-blue);
 }
 
 .emergency-service h2 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  position: relative;
+}
+
+.emergency-service h2 i {
+  margin-left: 0.5rem;
 }
 
 .emergency-service p {
@@ -356,18 +492,22 @@ header p {
 
 .emergency-btn {
   display: inline-block;
-  background: white;
-  color: #cc0000;
+  background: var(--white);
+  color: var(--secondary-orange);
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
 }
 
 .emergency-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
 }
 
 .emergency-btn i {
@@ -376,10 +516,21 @@ header p {
 
 /* فوتر */
 footer {
-  background: #1e3c72;
-  color: white;
+  background: var(--primary-blue);
+  color: var(--white);
   padding: 3rem 1rem 1.5rem;
   margin-top: 3rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-orange);
 }
 
 .footer-content {
@@ -405,6 +556,7 @@ footer {
 .footer-contact h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  color: var(--light-orange);
 }
 
 .footer-links ul,
@@ -424,13 +576,14 @@ footer {
 }
 
 .footer-links a:hover {
-  color: white;
+  color: var(--light-orange);
 }
 
 .footer-contact li i {
   margin-left: 0.5rem;
   width: 20px;
   text-align: center;
+  color: var(--light-orange);
 }
 
 .copyright {
@@ -462,7 +615,7 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  color: white;
+  color: var(--white);
   font-size: 1.5rem;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -480,8 +633,8 @@ footer {
   position: absolute;
   right: 70px;
   white-space: nowrap;
-  background: white;
-  color: #333;
+  background: var(--white);
+  color: var(--dark-text);
   padding: 0.5rem 1rem;
   border-radius: 30px;
   font-size: 0.9rem;
@@ -501,7 +654,7 @@ footer {
 }
 
 .call-btn {
-  background: #2a5298;
+  background: var(--secondary-blue);
 }
 
 /* منوی همبرگری */
@@ -514,5 +667,148 @@ footer {
 
 #menu-toggle {
   opacity: 0;
+  position: absolute;
 }
 
+.menu-btn {
+  display: flex;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  transition-duration: .25s;
+}
+
+.menu-btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu-btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu-box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: var(--primary-blue);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  transition-duration: .25s;
+  z-index: 999;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 24px;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+  border-right: 3px solid transparent;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-right-color: var(--primary-orange);
+  color: var(--light-orange);
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  left: 0;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  .service-list,
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-step {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .floating-buttons {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .highlight-card,
+  .service-card,
+  .product-card {
+    padding: 1rem;
+  }
+  
+  .service-btn,
+  .product-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .emergency-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
