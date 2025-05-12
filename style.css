@@ -809,31 +809,133 @@ iframe.visible {
 
 
 
-/* دکمه یادگیری بالای صفحه*/
-
+/* دکمه یادگیری - نسخه پیشرفته */
 .learn-button {
-  display: inline-block;
-  background-color: #FF8C00;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF8C00; /* نارنجی */
   color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 12px 24px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 10px;
+  margin: 15px 0;
   transition: all 0.3s ease;
-  border: 1px solid #FF8C00;
+  border: 2px solid #FF8C00;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-button i {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .learn-button:hover {
   background-color: transparent;
   color: #FF8C00;
   text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-strong {
-  color: #black;
+.learn-button:hover i {
+  transform: rotate(10deg) scale(1.1);
 }
 
+.learn-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.learn-btn-container {
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+/* انیمیشن ویژه دکمه یادگیری */
+@keyframes pulse-orange {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 140, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
+  }
+}
+
+.learn-button {
+  animation: pulse-orange 2s infinite;
+}
+
+/* افکت موجی هنگام hover */
+.learn-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.learn-button:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* حالت رسپانسیو */
+@media (max-width: 768px) {
+  .learn-button {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+  
+  .learn-button i {
+    font-size: 1rem;
+  }
+  
+  .learn-btn-container {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .learn-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .learn-button i {
+    margin-left: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .learn-button {
+    animation: none; /* غیرفعال کردن انیمیشن پالس در موبایل */
+  }
+}
 
 
 /* دکمه پرداخت */
