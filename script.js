@@ -1,3 +1,30 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+            } else {
+                // بستن سایر آکاردئون‌ها
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('show');
+                });
+                document.querySelectorAll('.accordion-button').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // باز کردن آکاردئون فعلی
+                this.classList.add('active');
+                content.classList.add('show');
+            }
+        });
+    });
+});
+
 
   document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
