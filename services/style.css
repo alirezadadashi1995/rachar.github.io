@@ -1,352 +1,223 @@
-/* Reset و تنظیمات پایه */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Vazir, sans-serif;
-}
-
+/* services.css */
 :root {
   --primary-blue: #1e3c72;
   --secondary-blue: #2a5298;
-  --primary-orange: #ff7b25;
-  --secondary-orange: #ff5e00;
+  --primary-orange: #F59F00;
+  --secondary-orange: #FFB01F;
   --light-orange: #ffd8b8;
   --dark-text: #333;
   --medium-text: #555;
   --light-text: #777;
-  --light-bg: #f5f7fa;
+  --light-bg: #fff;
   --white: #fff;
+  --light-gray: #f0f0f0;
+  --border-color: #e0e0e0;
+  --repair-color: #4a89dc;
+  --product-color: #ff8c42;
 }
 
-body {
-  background-color: var(--light-bg);
-  color: var(--dark-text);
-  line-height: 1.6;
-  position: relative;
-}
-
-/* هدر صفحه */
-header {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-  color: var(--white);
-  margin-bottom: 2rem;
-  border-radius: 0 0 15px 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--primary-orange);
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  position: relative;
-  display: inline-block;
-}
-
-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 50px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
-}
-
-header p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* کانتینر اصلی */
+/* استایل‌های عمومی */
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 }
 
-/* بخش معرفی خدمات */
-.services-intro {
+section {
   margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: var(--secondary-blue);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.services-intro h2 {
-  margin-bottom: 1.5rem;
-  color: var(--secondary-blue);
-  font-size: 1.5rem;
-  display: inline-block;
-  position: relative;
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+  border-radius: 3px;
 }
 
-.services-intro h2 i {
+h2 i {
   margin-left: 0.5rem;
   color: var(--primary-orange);
 }
 
-.services-intro p {
-  margin-bottom: 2rem;
-  color: var(--medium-text);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* استایل کارت‌های خدمات */
 .service-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .highlight-card {
   background: var(--white);
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-top: 3px solid var(--primary-orange);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--light-gray);
 }
 
 .highlight-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .highlight-card i {
   font-size: 2.5rem;
-  color: var(--secondary-blue);
+  color: var(--primary-blue);
   margin-bottom: 1rem;
 }
 
 .highlight-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--dark-text);
-}
-
-.highlight-card p {
-  color: var(--light-text);
-  font-size: 0.9rem;
-}
-
-/* بخش‌های خدمات */
-.mobile-repair,
-.laptop-repair,
-.computer-repair,
-.product-sales {
-  margin-bottom: 3rem;
-  padding-top: 1rem;
-}
-
-.mobile-repair h2,
-.laptop-repair h2,
-.computer-repair h2,
-.product-sales h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
   color: var(--secondary-blue);
-  font-size: 1.5rem;
-  position: relative;
-  display: inline-block;
-  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
-.mobile-repair h2::after,
-.laptop-repair h2::after,
-.computer-repair h2::after,
-.product-sales h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
-}
-
-.mobile-repair h2 i,
-.laptop-repair h2 i,
-.computer-repair h2 i,
-.product-sales h2 i {
-  color: var(--primary-orange);
-  margin-left: 0.5rem;
-}
-
-.mobile-repair p,
-.laptop-repair p,
-.computer-repair p,
-.product-sales p {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--medium-text);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-list,
-.product-list {
+/* استایل لیست خدمات */
+.service-list, .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
-.service-card,
-.product-card {
+.service-card, .product-card {
   background: var(--white);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-top: 3px solid var(--primary-orange);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--light-gray);
 }
 
-.service-card:hover,
-.product-card:hover {
+.service-card:hover, .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.service-card img,
-.product-card img {
+.service-card img, .product-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 1px solid #eee;
 }
 
-.service-card h3,
-.product-card h3 {
-  padding: 1rem 1rem 0.5rem;
-  color: var(--dark-text);
+.service-card-content, .product-card-content {
+  padding: 1.5rem;
 }
 
-.service-card p,
-.product-card p {
-  padding: 0 1rem;
-  color: var(--light-text);
-  font-size: 0.9rem;
+.service-card h3, .product-card h3 {
+  color: var(--secondary-blue);
+  margin-bottom: 0.5rem;
 }
 
 .service-card ul {
-  padding: 1rem;
-  list-style-type: none;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
-.service-card ul li {
-  margin-bottom: 0.5rem;
+.service-card li {
+  padding: 0.3rem 0;
   position: relative;
   padding-right: 1.2rem;
-  color: var(--medium-text);
 }
 
-.service-card ul li:before {
-  content: "•";
-  color: var(--primary-orange);
+.service-card li::before {
+  content: '•';
   position: absolute;
   right: 0;
-}
-
-.service-btn,
-.product-btn {
-  display: block;
-  text-align: center;
-  padding: 0.8rem;
-  margin: 1rem;
-  background: var(--secondary-blue);
-  color: var(--white);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.3s;
-  font-weight: bold;
-}
-
-.service-btn:hover,
-.product-btn:hover {
-  background: var(--primary-blue);
-  transform: translateY(-2px);
-}
-
-/* فرآیند خدمات */
-.service-process {
-  margin-bottom: 3rem;
-  padding: 2rem 0;
-}
-
-.service-process h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--secondary-blue);
-  font-size: 1.5rem;
-  position: relative;
-}
-
-.service-process h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
-}
-
-.service-process h2 i {
   color: var(--primary-orange);
-  margin-left: 0.5rem;
 }
 
+/* استایل دکمه‌ها */
+.service-btn, .product-btn, .emergency-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.service-btn {
+  background: linear-gradient(135deg, var(--repair-color), var(--secondary-blue));
+  color: var(--white);
+  width: 100%;
+}
+
+.product-btn {
+  background: linear-gradient(135deg, var(--product-color), #ff6b00);
+  color: var(--white);
+  width: 100%;
+}
+
+.emergency-btn {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: var(--white);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.service-btn:hover, .product-btn:hover, .emergency-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* استایل فرآیند خدمات */
 .process-steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .process-step {
   flex: 1;
-  min-width: 150px;
-  max-width: 200px;
-  background: var(--white);
-  padding: 1.5rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  min-width: 180px;
   text-align: center;
-  transition: transform 0.3s;
-  border-top: 3px solid var(--primary-orange);
+  padding: 1.5rem;
+  position: relative;
 }
 
-.process-step:hover {
-  transform: translateY(-5px);
+.process-step::after {
+  content: '→';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-orange);
+  font-size: 1.5rem;
+}
+
+.process-step:first-child::after {
+  display: none;
 }
 
 .step-number {
   width: 40px;
   height: 40px;
-  background: var(--secondary-blue);
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -354,88 +225,20 @@ header p {
   justify-content: center;
   margin: 0 auto 1rem;
   font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.process-step h3 {
-  margin-bottom: 0.5rem;
-  color: var(--dark-text);
-  font-size: 1rem;
-}
-
-.process-step p {
-  color: var(--light-text);
-  font-size: 0.8rem;
-}
-
-/* ضمانت خدمات */
-.service-guarantee {
-  margin-bottom: 3rem;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border-top: 3px solid var(--primary-orange);
-}
-
-.service-guarantee h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--secondary-blue);
-  font-size: 1.5rem;
-  position: relative;
-}
-
-.service-guarantee h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
-}
-
-.service-guarantee h2 i {
-  color: var(--primary-orange);
-  margin-left: 0.5rem;
-}
-
+/* استایل ضمانت خدمات */
 .guarantee-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 2rem;
+  align-items: center;
 }
 
 .guarantee-text {
   flex: 1;
   min-width: 300px;
-}
-
-.guarantee-text p {
-  margin-bottom: 1rem;
-  color: var(--medium-text);
-}
-
-.guarantee-text ul {
-  list-style-type: none;
-  margin-top: 1rem;
-}
-
-.guarantee-text ul li {
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-right: 1.2rem;
-  color: var(--medium-text);
-}
-
-.guarantee-text ul li:before {
-  content: "•";
-  color: var(--primary-orange);
-  position: absolute;
-  right: 0;
 }
 
 .guarantee-image {
@@ -446,91 +249,33 @@ header p {
 
 .guarantee-image img {
   max-width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--light-orange);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* خدمات اورژانسی */
+/* استایل خدمات اورژانسی */
 .emergency-service {
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: var(--white);
+  border-radius: 8px;
   padding: 2rem;
-  border-radius: 10px;
-  margin-bottom: 3rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.emergency-service::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--secondary-blue);
 }
 
 .emergency-service h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  position: relative;
+  color: var(--white);
 }
 
 .emergency-service h2 i {
-  margin-left: 0.5rem;
+  color: var(--light-orange);
 }
 
-.emergency-service p {
-  margin-bottom: 1.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.emergency-btn {
-  display: inline-block;
-  background: var(--white);
-  color: var(--secondary-orange);
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 2px solid transparent;
-}
-
-.emergency-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background: transparent;
-  color: var(--white);
-  border-color: var(--white);
-}
-
-.emergency-btn i {
-  margin-left: 0.5rem;
-}
-
-/* فوتر */
+/* استایل فوتر */
 footer {
-  background: var(--primary-blue);
+  background: linear-gradient(135deg, #1a2a4a, #1e3c72);
   color: var(--white);
-  padding: 3rem 1rem 1.5rem;
+  padding: 3rem 1rem 1rem;
   margin-top: 3rem;
-  position: relative;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--primary-orange);
 }
 
 .footer-content {
@@ -539,7 +284,6 @@ footer::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-bottom: 2rem;
 }
 
 .footer-logo img {
@@ -547,30 +291,23 @@ footer::before {
   margin-bottom: 1rem;
 }
 
-.footer-logo p {
-  opacity: 0.9;
-  font-size: 0.9rem;
-}
-
-.footer-links h3,
-.footer-contact h3 {
+.footer-links h3, .footer-contact h3 {
+  color: var(--secondary-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: var(--light-orange);
 }
 
-.footer-links ul,
-.footer-contact ul {
+.footer-links ul, .footer-contact ul {
   list-style: none;
+  padding: 0;
 }
 
-.footer-links li,
-.footer-contact li {
+.footer-links li, .footer-contact li {
   margin-bottom: 0.5rem;
 }
 
 .footer-links a {
-  color: #ddd;
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -579,236 +316,60 @@ footer::before {
   color: var(--light-orange);
 }
 
-.footer-contact li i {
-  margin-left: 0.5rem;
+.footer-contact i {
   width: 20px;
   text-align: center;
-  color: var(--light-orange);
+  margin-left: 0.5rem;
+  color: var(--secondary-orange);
 }
 
 .copyright {
   text-align: center;
+  margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* دکمه‌های شناور */
-.floating-buttons {
-  position: fixed;
-  bottom: 2rem;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.floating-buttons.right {
-  right: 2rem;
-}
-
-.floating-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: var(--white);
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.floating-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.floating-btn span {
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s, right 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.floating-btn:hover span {
-  opacity: 1;
-  right: 80px;
-}
-
-.whatsapp-btn {
-  background: #25D366;
-}
-
-.call-btn {
-  background: var(--secondary-blue);
-}
-
-/* منوی همبرگری */
-.hamburger-menu {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1000;
-}
-
-#menu-toggle {
-  opacity: 0;
-  position: absolute;
-}
-
-.menu-btn {
-  display: flex;
-  align-items: center;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.menu-btn > span,
-.menu-btn > span::before,
-.menu-btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--white);
-  transition-duration: .25s;
-}
-
-.menu-btn > span::before {
-  content: '';
-  top: -8px;
-}
-
-.menu-btn > span::after {
-  content: '';
-  top: 8px;
-}
-
-.menu-box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-  top: 0;
-  left: -100%;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  background-color: var(--primary-blue);
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-  transition-duration: .25s;
-  z-index: 999;
-}
-
-.menu-item {
-  display: block;
-  padding: 12px 24px;
-  color: var(--white);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition-duration: .25s;
-  border-right: 3px solid transparent;
-}
-
-.menu-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-right-color: var(--primary-orange);
-  color: var(--light-orange);
-}
-
-#menu-toggle:checked ~ .menu-btn > span {
-  transform: rotate(45deg);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-#menu-toggle:checked ~ .menu-box {
-  visibility: visible;
-  left: 0;
 }
 
 /* رسپانسیو */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-  
-  .service-list,
-  .product-list {
-    grid-template-columns: 1fr;
-  }
-  
   .process-steps {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
   
   .process-step {
-    max-width: 100%;
     width: 100%;
   }
   
-  .floating-buttons {
-    bottom: 1rem;
-    right: 1rem;
+  .process-step::after {
+    content: '↓';
+    left: 50%;
+    top: auto;
+    bottom: -15px;
+    transform: translateX(-50%);
   }
   
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+  .guarantee-content {
+    flex-direction: column;
+  }
+  
+  .guarantee-image {
+    order: -1;
   }
 }
 
 @media (max-width: 480px) {
-  header {
-    padding: 1.5rem 1rem;
+  h2 {
+    font-size: 1.5rem;
   }
   
-  .highlight-card,
-  .service-card,
-  .product-card {
-    padding: 1rem;
+  section {
+    padding: 1.5rem;
   }
   
-  .service-btn,
-  .product-btn {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-  }
-  
-  .emergency-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+  .service-list, .product-list {
+    grid-template-columns: 1fr;
   }
 }
