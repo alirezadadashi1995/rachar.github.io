@@ -63,6 +63,53 @@ header p {
   opacity: 0.9;
 }
 
+/* استایل هدر */
+/* استایل لوگوی هدر */
+.logo-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.header-logo {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.7s ease-in-out;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.header-logo:hover {
+  transform: rotate(360deg) scale(1.1);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(255, 176, 31, 0.7));
+  }
+  70% {
+    filter: drop-shadow(0 0 10px rgba(255, 176, 31, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgba(255, 176, 31, 0));
+  }
+}
+
+/* برای نمایش بهتر در موبایل */
+@media (max-width: 768px) {
+  .logo-container {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .header-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
 /* اسلایدر */
 .slider-container {
   width: 100%;
@@ -445,6 +492,8 @@ p {
   color: var(--medium-text);
   text-align: center;
 }
+
+
 
 /* استایل فوتر */
 .site-footer {
