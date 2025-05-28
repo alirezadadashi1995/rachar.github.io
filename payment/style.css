@@ -271,3 +271,42 @@
     min-width: 100%;
   }
 }
+
+/* استایل دکمه واتساپ */
+.whatsapp-receipt {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background: #25D366;
+  color: white !important;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
+
+.whatsapp-receipt small {
+  display: block;
+  color: var(--light-text);
+  font-size: 0.8rem;
+  text-align: center;
+}
