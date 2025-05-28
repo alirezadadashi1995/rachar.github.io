@@ -352,6 +352,21 @@
         });
       }
     });
-  </script>
+  
+  // در script.js یا بخش اسکریپت صفحه
+document.addEventListener('DOMContentLoaded', function() {
+  const whatsappBtn = document.querySelector('.whatsapp-btn');
+  
+  if(whatsappBtn) {
+    const trackingCode = document.getElementById('trackingCode')?.value || 'ثبت نشده';
+    const amount = document.getElementById('amount')?.value || 'ثبت نشده';
+    const date = new Date().toLocaleDateString('fa-IR');
+    
+    const message = `رسید پرداخت راچار%0Aکد رهگیری: ${trackingCode}%0Aمبلغ: ${amount} تومان%0Aتاریخ: ${date}`;
+    
+    whatsappBtn.href = `https://wa.me/989123213854?text=${message}`;
+  }
+});
+</script>
 </body>
 </html>
