@@ -233,6 +233,13 @@ p {
   text-align: center;
 }
 
+p2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
 /* مراحل خدمات */
 .service-steps,
 .order-steps {
