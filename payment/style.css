@@ -1,312 +1,241 @@
-/* استایل‌های اختصاصی صفحه پرداخت */
-#payment-section {
-  background: linear-gradient(135deg, #f5f9ff 0%, #e6f0ff 100%);
-  border-top: 4px solid var(--primary-orange);
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+/* استایل‌های صفحه پرداخت */
 
-.payment-form-container {
+/* بخش اطلاعات پرداخت */
+.payment-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-.payment-form {
-  flex: 1;
-  min-width: 300px;
-  background: var(--white);
+.payment-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--light-gray);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--secondary-blue);
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  font-family: Vazir, sans-serif;
-  transition: all 0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: var(--primary-orange);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(245, 159, 0, 0.2);
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.checkbox-group input {
-  width: auto;
-}
-
-.checkbox-group label {
-  margin-bottom: 0;
-  font-weight: normal;
-}
-
-.checkbox-group a {
-  color: var(--primary-orange);
-  text-decoration: none;
-}
-
-.checkbox-group a:hover {
-  text-decoration: underline;
-}
-
-.payment-submit-btn {
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
-  color: var(--white);
-  border: none;
-  border-radius: 5px;
-  font-family: Vazir, sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 1rem;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.payment-submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.payment-submit-btn i {
-  margin-left: 0.5rem;
-}
-
-.payment-methods {
-  flex: 1;
-  min-width: 300px;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--light-gray);
-}
-
-.methods-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.method {
-  flex: 1;
-  min-width: 150px;
-  background: var(--light-gray);
-  padding: 1rem;
-  border-radius: 5px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.method:hover {
-  background: var(--light-orange);
-  transform: translateY(-3px);
-}
-
-.method i {
-  font-size: 1.5rem;
-  color: var(--primary-orange);
-  margin-bottom: 0.5rem;
-}
-
-.method span {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--dark-text);
-}
-
-.bank-info {
-  margin-top: 2rem;
+  transition: transform 0.3s ease;
 }
 
 .bank-card {
-  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  margin-top: 1rem;
+  border-top: 4px solid #007a3d; /* رنگ سبز بانک ملی */
 }
 
-.bank-detail {
+.bank-logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed var(--border-color);
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.bank-detail:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+.bank-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
-.bank-detail span:first-child {
-  font-weight: bold;
-  color: var(--secondary-blue);
-}
-
-.copy-btn {
-  background: none;
-  border: none;
-  color: var(--primary-orange);
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-
-.copy-btn:hover {
-  transform: scale(1.1);
-}
-
-#payment-faq {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-  padding: 2rem 1rem;
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid var(--secondary-blue);
-}
-
-.accordion {
-  margin-top: 2rem;
-}
-
-.accordion-button {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  text-align: right;
-  background: var(--light-gray);
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Vazir, sans-serif;
-  font-size: 1rem;
+.bank-logo h3 {
   color: var(--dark-text);
-  transition: all 0.3s;
+  font-size: 1.3rem;
+  margin: 0;
 }
 
-.accordion-button:hover {
-  background: var(--light-orange);
+.payment-detail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
 }
 
-.accordion-button.active {
-  background: var(--primary-orange);
-  color: var(--white);
+.payment-label {
+  color: var(--medium-text);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-.accordion-button i:first-child {
-  margin-left: 0.5rem;
+.payment-value {
+  color: var(--dark-text);
+  font-size: 1.1rem;
+  font-weight: bold;
+  direction: ltr;
+  text-align: center;
 }
 
-.accordion-button i:last-child {
-  transition: transform 0.3s;
-}
-
-.accordion-button.active i:last-child {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  padding: 0 1.5rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background: var(--light-bg);
-  border-radius: 0 0 5px 5px;
-}
-
-.accordion-content.show {
-  max-height: 300px;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* رسپانسیو */
-@media (max-width: 768px) {
-  .payment-form,
-  .payment-methods {
-    min-width: 100%;
-  }
-  
-  .method {
-    min-width: 100%;
-  }
-}
-
-/* استایل دکمه واتساپ */
-.whatsapp-receipt {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px dashed var(--border-color);
-}
-
-.whatsapp-btn {
+.copy-field {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1rem;
-  background: #25D366;
-  color: white !important;
-  border-radius: 5px;
+  background: var(--light-gray);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.copy-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-blue);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  padding: 0.5rem;
+}
+
+.copy-btn:hover {
+  color: var(--secondary-blue);
+  transform: scale(1.1);
+}
+
+.payment-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: var(--light-orange);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.payment-notice i {
+  color: var(--primary-orange);
+  font-size: 1.5rem;
+}
+
+.payment-notice p {
+  color: var(--dark-text);
+  margin: 0;
+  text-align: right;
+}
+
+/* بخش ارسال رسید */
+.receipt-section {
+  background: linear-gradient(135deg, #f5f9ff 0%, #e6f0ff 100%);
+}
+
+.receipt-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.receipt-method {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.receipt-method:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.method-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+}
+
+.whatsapp .method-icon {
+  background: rgba(37, 211, 102, 0.1);
+  color: #25D366;
+}
+.eitaa .method-icon {
+  background: rgba(0, 136, 204, 0.1);
+  color: #0088cc;
+}
+.bale .method-icon {
+  background: rgba(0, 175, 240, 0.1);
+  color: #00AFF0;
+}
+
+.receipt-method h3 {
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.receipt-method p {
+  color: var(--medium-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.method-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s;
-  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
-.whatsapp-btn:hover {
-  background: #128C7E;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.whatsapp .method-btn {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+.eitaa .method-btn {
+  background: #0088cc;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+}
+.bale .method-btn {
+  background: #00AFF0;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 175, 240, 0.3);
 }
 
-.whatsapp-btn i {
-  font-size: 1.2rem;
+.method-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.whatsapp-receipt small {
-  display: block;
-  color: var(--light-text);
-  font-size: 0.8rem;
-  text-align: center;
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .payment-cards,
+  .receipt-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  .payment-card,
+  .receipt-method {
+    padding: 1.5rem;
+  }
+  
+  .bank-logo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-value {
+    font-size: 1rem;
+  }
+  
+  .method-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
 }
