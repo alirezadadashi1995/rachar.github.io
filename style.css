@@ -493,6 +493,54 @@ p2 {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* استایل بخش پیگیری سفارش کالا */
+#order-tracking {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-gray);
+  max-width: 500px;
+  text-align: center;
+}
+
+#order-tracking input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  font-family: Vazir, sans-serif;
+  text-align: center;
+  transition: border 0.3s;
+}
+
+#order-tracking input:focus {
+  border-color: var(--primary-orange);
+  outline: none;
+}
+
+#order-tracking button {
+  background: linear-gradient(135deg, var(--product-color) 0%, #ff6b00 100%);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: Vazir, sans-serif;
+  transition: all 0.3s;
+  margin: 1rem auto;
+  display: block;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#order-tracking button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
 #repairStatus,
 #repairDescription,
 #repairCost {
