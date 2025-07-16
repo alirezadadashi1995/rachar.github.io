@@ -120,3 +120,102 @@ function checkRepairStatus() {
         document.getElementById("repairCost").innerHTML = "";
     });
 }
+
+// تابع پیگیری سفارش کالا
+function checkOrderStatus() {
+    var trackingCode = document.getElementById("orderTrackingCode").value.trim();
+
+    if (!trackingCode) {
+        alert("لطفاً کد رهگیری خود را وارد کنید.");
+        return;
+    }
+
+    // نمایش حالت جستجو
+    document.getElementById("orderStatus").innerHTML = "🔄 در حال جستجو...";
+    document.getElementById("orderDetails").innerHTML = "";
+    document.getElementById("orderCost").innerHTML = "";
+    document.getElementById("deliveryInfo").innerHTML = "";
+
+    // آدرس اسکریپت سفارش کالا (مطمئن شوید این آدرس صحیح است)
+    fetch("https://script.google.com/macros/s/AKfycby890lxLygWH9AxG2O9bmThUCUc8k1er1zRd-RtcYhIb13m7h1IFB5HNbNgcrmwvkH-/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ trackingCode: trackingCode })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status) {
+            document.getElementById("orderStatus").innerHTML = "🔍 وضعیت سفارش: " + data.status;
+
+            let details = "";
+            let costText = "";
+            let deliveryText = "";
+
+            // اگر مقدار هزینه دارای عبارت اضافی باشد، فقط عدد را استخراج می‌کنیم
+            let costValue = data.cost ? data.cost.replace(/[^0-9]/g, "") : "";
+
+            // اطلاعات سفارش
+            if (data.productName) {
+                details += "📦 نام کالا: " + data.productName + "<br>";
+            }
+            if (data.productDetails) {
+                details += "📝 توضیحات: " + data.productDetails + "<br>";
+            }
+            if (data.deliveryMethod) {
+                details += "🚚 روش تحویل: " + data.deliveryMethod + "<br>";
+            }
+
+            // وضعیت سفارش
+            switch (data.status) {
+                case "ثبت اولیه سفارش":
+                    details += "✅ سفارش شما ثبت شده و در حال بررسی است.";
+                    break;
+                case "تایید سفارش":
+                    details += "✅ سفارش شما تایید شده و در حال آماده‌سازی است.";
+                    if (costValue) {
+                        costText = "💰 مبلغ سفارش: " + costValue + " تومان";
+                    }
+                    break;
+                case "آماده ارسال":
+                    details += "📦 سفارش شما آماده ارسال است.";
+                    if (costValue) {
+                        costText = "💰 مبلغ سفارش: " + costValue + " تومان";
+                    }
+                    deliveryText = "⏳ تحویل در 24 ساعت آینده";
+                    break;
+                case "تحویل داده شده":
+                    details += "🎉 سفارش شما تحویل داده شده است.";
+                    if (costValue) {
+                        costText = "💰 مبلغ پرداخت شده: " + costValue + " تومان";
+                    }
+                    deliveryText = "✅ تحویل در تاریخ: " + (data.timestamp || "نامشخص");
+                    break;
+                default:
+                    details += "وضعیت نامشخص. لطفاً با پشتیبانی تماس بگیرید.";
+            }
+
+            document.getElementById("orderDetails").innerHTML = details;
+            document.getElementById("orderCost").innerHTML = costText;
+            document.getElementById("deliveryInfo").innerHTML = deliveryText;
+        } else {
+            document.getElementById("orderStatus").innerHTML = "❌ کد رهگیری یافت نشد.";
+            document.getElementById("orderDetails").innerHTML = "لطفاً مجدداً بررسی کنید.";
+            document.getElementById("orderCost").innerHTML = "";
+            document.getElementById("deliveryInfo").innerHTML = "";
+        }
+    })
+    .catch(error => {
+        console.error("⚠️ خطا در دریافت اطلاعات:", error);
+        document.getElementById("orderStatus").innerHTML = "❗ خطا در ارتباط با سرور. لطفاً بعداً امتحان کنید.";
+        document.getElementById("orderDetails").innerHTML = "";
+        document.getElementById("orderCost").innerHTML = "";
+        document.getElementById("deliveryInfo").innerHTML = "";
+    });
+}
+
+// فعال کردن جستجو با کلید اینتر
+document.getElementById("orderTrackingCode").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        checkOrderStatus();
+    }
+});
