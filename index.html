@@ -222,7 +222,15 @@
         </div>
         
         <a href="https://forms.gle/pUJRd9NBdNgye8717" class="button order-button">ثبت سفارش کالا</a>
-        
+        <div id="order-tracking">
+            <h3>پیگیری سفارش کالا</h3>
+            <input type="text" id="orderTrackingCode" placeholder="لطفا کد رهگیری خود را وارد کنید">
+            <button onclick="checkOrderStatus()">پیگیری سفارش</button>
+            <div id="orderStatus"></div>
+            <div id="orderDetails"></div>
+            <div id="orderCost"></div>
+            <div id="deliveryInfo"></div>
+        </div>
         <div class="order-benefits">
             <h3>مزایای سفارش از راچار:</h3>
             <ul>
